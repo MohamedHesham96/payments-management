@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ClothingStoreManagementApplication {
+public class PaymentsManagementApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ClothingStoreManagementApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentsManagementApplication.class, args);
+    }
 }
