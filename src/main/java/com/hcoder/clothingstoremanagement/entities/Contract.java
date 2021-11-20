@@ -41,6 +41,9 @@ public class Contract {
     @Column(name = "creation_date")
     LocalDateTime creationDate;
 
+    @Column(name = "enabled")
+    Boolean enabled;
+
     public int getId() {
         return id;
     }
@@ -127,5 +130,13 @@ public class Contract {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }
