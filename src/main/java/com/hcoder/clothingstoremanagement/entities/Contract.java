@@ -26,7 +26,7 @@ public class Contract {
     @Column(name = "REMAIN_AMOUNT")
     Double remainAmount;
 
-    @Column(name = "MONTHLY_AMOUNT")
+    @Column(name = "monthly_interest")
     String monthlyAmount;
 
     @Column(name = "PAYMENT_DAY")
