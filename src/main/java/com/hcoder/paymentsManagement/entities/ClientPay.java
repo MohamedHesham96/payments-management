@@ -1,4 +1,4 @@
-package com.hcoder.clothingstoremanagement.entities;
+package com.hcoder.paymentsManagement.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
