@@ -27,7 +27,7 @@ public class Navigator {
 
     @RequestMapping("/login")
     public ModelAndView userLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
-        if (username.equals("mazen") && password.equals("mazen")) {
+            if (username.equals("mazen") && password.equals("mazen")) {
             httpSession.setAttribute("username", username);
             httpSession.setAttribute("passwrord", password);
             return new ModelAndView("homePage");

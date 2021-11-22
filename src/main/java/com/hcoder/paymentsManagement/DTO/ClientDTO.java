@@ -1,28 +1,19 @@
-package com.hcoder.paymentsManagement.entities;
+package com.hcoder.paymentsManagement.DTO;
 
-import javax.persistence.*;
+import com.googlecode.jmapper.annotations.JMap;
+
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity
-@Table(name = "CLIENT")
-public class Client {
+public class ClientDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JMap
     private int id;
-
-    @Column(name = "NAME")
+    @JMap
     private String name;
-
-    @Column(name = "PHONE")
+    @JMap
     private String phone;
-
-    @Column(name = "CREATION_DATE")
+    @JMap
     private LocalDateTime creationDate;
-
-    @OneToMany(mappedBy = "client")
-    List<ClientPay> clientPays;
 
     public int getId() {
         return id;
@@ -54,13 +45,5 @@ public class Client {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
-    }
-
-    public List<ClientPay> getClientPays() {
-        return clientPays;
-    }
-
-    public void setClientPays(List<ClientPay> clientPays) {
-        this.clientPays = clientPays;
     }
 }

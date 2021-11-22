@@ -9,20 +9,20 @@ public class ClientPay {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
 
     @Column(name = "AMOUNT")
-    Double amount;
+    private Double amount;
 
     @Column(name = "DATE")
-    LocalDateTime date;
+    private LocalDateTime date;
 
     @Column(name = "NOTE")
-    String note;
+    private String note;
 
     @ManyToOne
     @JoinColumn(name = "CLIENT_ID")
-    Client client;
+    private Client client;
 
     public Integer getId() {
         return id;

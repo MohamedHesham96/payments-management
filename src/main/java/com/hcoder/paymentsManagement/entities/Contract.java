@@ -9,40 +9,44 @@ public class Contract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     @Column(name = "DEVICE_TYPE")
-    String deviceType;
+    private String deviceType;
 
     @Column(name = "SERIAL_NUMBER")
-    String serialNumber;
+    private String serialNumber;
 
     @Column(name = "PAYED")
-    Double payed;
+    private Double payed;
 
     @Column(name = "REMAIN")
-    Double remain;
+    private Double remain;
 
     @Column(name = "REMAIN_AMOUNT")
-    Double remainAmount;
+    private Double remainAmount;
 
     @Column(name = "monthly_interest")
-    String monthlyAmount;
+    private String monthlyAmount;
 
     @Column(name = "PAYMENT_DAY")
-    Integer paymentDay;
+    private Integer paymentDay;
 
     @Column(name = "GUARANTOR_NAME")
-    String guarantorName;
+    private String guarantorName;
 
     @Column(name = "guarantor_phone")
-    String guarantorPhone;
+    private String guarantorPhone;
 
     @Column(name = "creation_date")
-    LocalDateTime creationDate;
+    private LocalDateTime creationDate;
 
     @Column(name = "enabled")
-    Boolean enabled;
+    private Boolean enabled;
 
     public int getId() {
         return id;
@@ -50,6 +54,14 @@ public class Contract {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public String getDeviceType() {

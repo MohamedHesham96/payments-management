@@ -11,4 +11,8 @@
     <definition name="homePage" extends="paymentsManagementTemplate">
         <put-attribute name="main-content" value="/WEB-INF/jsp/home.jsp"/>
     </definition>
+
+    <definition name="paymentDayClients" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/paymentDayClients.jsp"/>
+    </definition>
 </tiles-definitions>

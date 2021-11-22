@@ -15,21 +15,18 @@
     <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
     <link rel="script" href="<c:url value="/resources/plugins/Jquery/jquery-3.6.0.js"/>">
     <link rel="stylesheet" href="<c:url value="/resources/plugins/toastr/toastr.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/font-awesome.min.css"/>">
     <link rel="script" href="<c:url value="/resources/plugins/toastr/toastr.js"/>">
     <link rel="script" href="<c:url value="/resources/js/commons.js"/>">
 </head>
 
 <!-- body -->
 <body>
-<div class=" app
-    ">
-    <!-- top header -->
-    <!-- /top header -->
-    <section class="layout">
-        <tiles:insertAttribute name="header"/>
 
-        <tiles:insertAttribute name="main-content"/>
-    </section>
+    <tiles:insertAttribute name="header"/>
+
+    <tiles:insertAttribute name="main-content"/>
+
     <tiles:insertAttribute name="footer"/>
 </div>
 
