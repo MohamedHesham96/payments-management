@@ -7,81 +7,130 @@
 
 <style>
     .text-size-50 {
-        font-size: 50px;
-        padding: 50px;
+        font-size: 30px;
+    }
+    a:hover{
+        text-decoration: none;
     }
 </style>
-<br>
-<br>
-<div class="row container m-auto" dir="rtl">
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <a href="/clients/5">
-                   <h4 class="card-title text-size-50 text-center">
-                        يوم 5
-                    </h4>
-                </a>
+
+<div class="container mt-5" dir="rtl">
+
+    <div class="card shadow-lg">
+        <div class="card-header shadow-sm text-center pb-0">
+            <h2 class="card-title text-primary">
+                الاقساط
+            </h2>
+        </div>
+        <div class="card-body shadow">
+            <div class="row container m-auto" dir="rtl">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header shadow-sm shadow-sm">
+                            <a href="/clients/5">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 5
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay5 ne null ? remainAmountDay5 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients/10" class="text">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 10
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay10 ne null ? remainAmountDay10 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients/15">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 15
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay15 ne null ? remainAmountDay15 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row container m-auto" dir="rtl">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients/20">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 20
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay20 ne null ? remainAmountDay20 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients/25">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 25
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay25 ne null ? remainAmountDay25 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients/30">
+                                <h5 class="card-title text-size-50 text-center">
+                                    يوم 30
+                                </h5>
+                            </a>
+                            <hr>
+                            <h6 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay30 ne null ? remainAmountDay30 : 0.0}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <a href="/clients/10">
-                    <h4 class="card-title text-size-50 text-center">
-                        يوم 10
-                    </h4>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title text-size-50 text-center">
-                    يوم 15
-                </h4>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br>
-
-<div class="row container m-auto" dir="rtl">
-
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title text-size-50 text-center">
-                    يوم 20
-                </h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title text-size-50 text-center">
-                    يوم 25
-                </h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title text-size-50 text-center">
-                    يوم 30
-                </h4>
-            </div>
-        </div>
-    </div>
-
-
 </div>

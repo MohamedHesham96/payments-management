@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<div class="container" dir="rtl">
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title text-primary pull-right">
+                اقساط يوم
+                (${paymentDay}) -
+                للعميل
+            </h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+
+                <thead class="table-striped bg-primary text-white shadow"
+                       style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
+                <tr>
+                    <th>نوع الجهاز</th>
+                    <th>الرقم التسلسلي</th>
+                    <th>اسم الضامن</th>
+                    <th>رقم الضامن</th>
+                    <th>التاريخ</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+                <c:forEach items="${contracts}" var="contract">
+                    <tr>
+                        <td>
+                                ${contract.deviceType}
+                        </td>
+                        <td>
+                                ${contract.serialNumber}
+                        </td>
+                        <td>
+                                ${contract.guarantorName}
+                        </td>
+                        <td>
+                                ${contract.guarantorPhone}
+                        </td>
+                        <td>
+                                ${contract.creationDate}
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

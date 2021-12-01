@@ -12,12 +12,12 @@
 <html class="no-js">
 <head>
     <link href="<c:url value="/bootstrap/bootstrap.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
-    <link rel="script" href="<c:url value="/resources/plugins/Jquery/jquery-3.6.0.js"/>">
-    <link rel="stylesheet" href="<c:url value="/resources/plugins/toastr/toastr.min.css"/>">
+    <link href="<c:url value="/css/font-awesome.css" />" rel="stylesheet">
+    <link rel="script" href="<c:url value="/plugins/Jquery/jquery-3.6.0.js"/>">
+    <link rel="stylesheet" href="<c:url value="/plugins/toastr/toastr.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/css/font-awesome.min.css"/>">
-    <link rel="script" href="<c:url value="/resources/plugins/toastr/toastr.js"/>">
-    <link rel="script" href="<c:url value="/resources/js/commons.js"/>">
+    <link rel="script" href="<c:url value="/plugins/toastr/toastr.js"/>">
+    <link rel="script" href="<c:url value="/js/commons.js"/>">
 </head>
 
 <!-- body -->
@@ -30,9 +30,9 @@
     <tiles:insertAttribute name="footer"/>
 </div>
 
-<script src="<c:url value="/resources/plugins/toastr/toastr.min.js"/>"></script>
-<script src="<c:url value="/resources/plugins/bootbox/bootbox.min.js"/>"></script>
-<script src="<c:url value="/resources/plugins/bootbox/bootbox.locales.min.js"/>"></script>
+<script src="<c:url value="/plugins/toastr/toastr.min.js"/>"></script>
+<script src="<c:url value="/plugins/bootbox/bootbox.min.js"/>"></script>
+<script src="<c:url value="/plugins/bootbox/bootbox.locales.min.js"/>"></script>
 
 </body>
 </html>

@@ -15,4 +15,8 @@
     <definition name="paymentDayClients" extends="paymentsManagementTemplate">
         <put-attribute name="main-content" value="/WEB-INF/jsp/paymentDayClients.jsp"/>
     </definition>
+
+    <definition name="contracts" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts.jsp"/>
+    </definition>
 </tiles-definitions>
