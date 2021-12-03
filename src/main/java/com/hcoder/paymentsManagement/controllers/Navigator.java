@@ -24,9 +24,9 @@ public class Navigator {
     }
 
     @RequestMapping("/logout")
-    public String userLogout() {
+    public ModelAndView userLogout() {
         httpSession.removeAttribute("username");
-        return "login";
+        return new ModelAndView("login");
     }
 
     @RequestMapping("/login")

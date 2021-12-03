@@ -17,6 +17,10 @@
     </definition>
 
     <definition name="contracts" extends="paymentsManagementTemplate">
-        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts.jsp"/>
+        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contracts.jsp"/>
+    </definition>
+
+    <definition name="contractDetails" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contractsDetails.jsp"/>
     </definition>
 </tiles-definitions>

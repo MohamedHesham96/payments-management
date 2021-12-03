@@ -7,16 +7,16 @@
 
 <style>
     .text-size-50 {
-        font-size: 30px;
+        font-size: 35px;
     }
     a:hover{
         text-decoration: none;
     }
 </style>
 
-<div class="container mt-5" dir="rtl">
+<div class=" container mt-5" dir="rtl">
 
-    <div class="card shadow-lg">
+    <div class="card row shadow">
         <div class="card-header shadow-sm text-center pb-0">
             <h2 class="card-title text-primary">
                 الاقساط
@@ -33,10 +33,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay5 ne null ? remainAmountDay5 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -50,10 +50,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay10 ne null ? remainAmountDay10 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -67,10 +67,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay15 ne null ? remainAmountDay15 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay20 ne null ? remainAmountDay20 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -106,10 +106,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay25 ne null ? remainAmountDay25 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -123,10 +123,10 @@
                                 </h5>
                             </a>
                             <hr>
-                            <h6 class="text-center">
+                            <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay30 ne null ? remainAmountDay30 : 0.0}
-                            </h6>
+                            </h5>
                         </div>
                     </div>
                 </div>

@@ -15,8 +15,7 @@
 
 
 </head>
-<body background="images/wall10.jpg"
-      style="background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
+<body style="background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
 
 
 <div class="container ">

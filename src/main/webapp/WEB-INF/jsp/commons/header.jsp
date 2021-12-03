@@ -14,8 +14,9 @@
 
 <nav style="box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.9);" dir="rtl"
      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top scrolling-navbar">
-    <a class="navbar-brand font-weight-bold" style="font-size: 26px"
-       href="#">مازن العليمي</a>
+    <a class="navbar-brand font-weight-bold" style="font-size: 30px"
+       href="#">4M
+        للتقسيط</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">

@@ -21,9 +21,6 @@ public class Client {
     @Column(name = "CREATION_DATE")
     private LocalDateTime creationDate;
 
-    @OneToMany(mappedBy = "client")
-    List<ClientPay> clientPays;
-
     public int getId() {
         return id;
     }
@@ -54,13 +51,5 @@ public class Client {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
-    }
-
-    public List<ClientPay> getClientPays() {
-        return clientPays;
-    }
-
-    public void setClientPays(List<ClientPay> clientPays) {
-        this.clientPays = clientPays;
     }
 }

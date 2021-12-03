@@ -4,7 +4,7 @@
 
 <div class="container" dir="rtl">
 
-    <div class="card">
+    <div class="card shadow">
         <div class="card-header">
             <h4 class="card-title text-primary pull-right">
                 اقساط يوم
@@ -12,8 +12,8 @@
                 للعميل
             </h4>
         </div>
-        <div class="card-body">
-            <table class="table table-striped">
+        <div class="card-body shadow">
+            <table class="table table-striped table-hover">
 
                 <thead class="table-striped bg-primary text-white shadow"
                        style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
@@ -31,7 +31,7 @@
                 <c:forEach items="${contracts}" var="contract">
                     <tr>
                         <td>
-                                ${contract.deviceType}
+                            <a href="/contracts/${contract.id}">${contract.deviceType}</a>
                         </td>
                         <td>
                                 ${contract.serialNumber}

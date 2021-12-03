@@ -14,15 +14,15 @@ public class ClientPay {
     @Column(name = "AMOUNT")
     private Double amount;
 
-    @Column(name = "DATE")
-    private LocalDateTime date;
-
     @Column(name = "NOTE")
     private String note;
 
-    @ManyToOne
-    @JoinColumn(name = "CLIENT_ID")
-    private Client client;
+    @Column(name = "DATE")
+    private LocalDateTime date;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contract_id")
+    private Contract contract;
 
     public Integer getId() {
         return id;
@@ -40,12 +40,12 @@ public class ClientPay {
         this.amount = amount;
     }
 
-    public Client getClient() {
-        return client;
+    public Contract getContract() {
+        return contract;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setContract(Contract contract) {
+        this.contract = contract;
     }
 
     public LocalDateTime getDate() {

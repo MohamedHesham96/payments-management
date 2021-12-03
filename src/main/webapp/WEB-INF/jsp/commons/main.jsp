@@ -18,16 +18,17 @@
     <link rel="stylesheet" href="<c:url value="/css/font-awesome.min.css"/>">
     <link rel="script" href="<c:url value="/plugins/toastr/toastr.js"/>">
     <link rel="script" href="<c:url value="/js/commons.js"/>">
+    <link rel="stylesheet" href="<c:url value="/css/main-ar.css"/>">
 </head>
 
 <!-- body -->
 <body>
 
-    <tiles:insertAttribute name="header"/>
+<tiles:insertAttribute name="header"/>
 
-    <tiles:insertAttribute name="main-content"/>
+<tiles:insertAttribute name="main-content"/>
 
-    <tiles:insertAttribute name="footer"/>
+<tiles:insertAttribute name="footer"/>
 </div>
 
 <script src="<c:url value="/plugins/toastr/toastr.min.js"/>"></script>

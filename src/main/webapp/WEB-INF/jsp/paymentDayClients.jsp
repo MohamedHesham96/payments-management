@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="container" dir="rtl">
-    <div class="card">
+    <div class="card shadow">
         <div class="card-header">
             <h4 class="card-title text-primary pull-right">
                 اقساط يوم
@@ -11,7 +11,7 @@
 
             </h4>
         </div>
-        <div class="card-body">
+        <div class="card-body shadow">
             <table class="table table-hover table-striped">
 
                 <thead class="bg-primary shadow text-white"

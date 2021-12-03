@@ -2,6 +2,7 @@ package com.hcoder.paymentsManagement.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "CONTRACT")
@@ -47,6 +48,9 @@ public class Contract {
 
     @Column(name = "enabled")
     private Boolean enabled;
+
+    @OneToMany(mappedBy = "contract")
+    private List<ClientPay> clientPays;
 
     public int getId() {
         return id;
@@ -150,5 +154,13 @@ public class Contract {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public List<ClientPay> getClientPays() {
+        return clientPays;
+    }
+
+    public void setClientPays(List<ClientPay> clientPays) {
+        this.clientPays = clientPays;
     }
 }
