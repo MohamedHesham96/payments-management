@@ -17,7 +17,7 @@
 <div class=" container mt-5" dir="rtl">
 
     <div class="card row shadow">
-        <div class="card-header shadow-sm text-center pb-0">
+        <div class="card-header shadow-sm text-center">
             <h2 class="card-title text-primary">
                 الاقساط
             </h2>

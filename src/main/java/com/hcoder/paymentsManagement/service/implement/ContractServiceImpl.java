@@ -15,6 +15,11 @@ public class ContractServiceImpl implements ContractService {
     ContractRepository contractRepository;
 
     @Override
+    public Contract saveContract(Contract contract) {
+        return contractRepository.save(contract);
+    }
+
+    @Override
     public Double sumPaymentDayRemainAmountTotal(Integer paymentDay) {
         return contractRepository.sumPaymentDayRemainAmount(paymentDay);
     }

@@ -1,18 +1,26 @@
 package com.hcoder.paymentsManagement.DTO;
 
-import com.googlecode.jmapper.annotations.JMap;
-
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 public class ClientDTO {
 
-    @JMap
     private int id;
-    @JMap
+
+    @NotNull(message = "يجب ادخل اسم العميل")
+    @NotBlank(message = "يجب ادخل الاسم العميل")
+    @Size(max = 50, message = "الاسم لا يتعدى ال50 حرف")
     private String name;
-    @JMap
+
+    @Pattern(regexp = "^01[0-2|5]{1}[0-9]{8}", message = "رقم العميل غير صحيح")
+    @NotNull(message = "يجب ادخل تليفون العميل")
+    @NotBlank(message = "يجب ادخل تليفون العميل")
+    @Size(max = 11, message = "رقم العميل لا يتعدى ولا يقل عن 11 رقم")
     private String phone;
-    @JMap
+
     private LocalDateTime creationDate;
 
     public int getId() {

@@ -50,6 +50,7 @@ public class Contract {
     private Boolean enabled;
 
     @OneToMany(mappedBy = "contract")
+    @OrderBy("date desc")
     private List<ClientPay> clientPays;
 
     public int getId() {

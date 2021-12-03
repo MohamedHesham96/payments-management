@@ -12,4 +12,8 @@ public interface ClientService {
     Page<Client> getClientsByPaymentDay(Integer paymentDay, Pagination pagination);
 
     List<Contract> getClientContracts(Integer clientId, Integer paymentDay);
+
+    Page<Client> getClients(Pagination pagination);
+
+    Client saveClient(Client client);
 }

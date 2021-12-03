@@ -107,8 +107,23 @@ function convertObjToJSON(object) {
     return jsonStr;
 }
 
-function refreshCurrentPage() {
-    location.reload();
+function refreshCurrentPage(timeout) {
+
+    setTimeout("location.reload();", timeout);
+}
+
+function showToaster(status, message) {
+    if (status) {
+        toastr.success(message);
+    } else {
+        toastr.error(message);
+    }
+    refreshCurrentPage(3000);
+}
+
+function showErrorToaster() {
+    toastr.error('حدث خطأ ما');
+    refreshCurrentPage(3000);
 }
 
 function changeLocale(requestedLocale) {
@@ -240,6 +255,26 @@ function loadTableForm(url, responseDiv, form, page, size) {
             $("#" + responseDiv).html(data);
         }
     });
+}
+
+function postForm(formId, url) {
+    var form = $("#" + formId);
+    form.parsley().validate();
+    if (form.parsley().isValid()) {
+        var jsonObject = convertToJSONObject("#" + formId);
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json",
+            success: function (response) {
+                showToaster(response.status, response.message)
+            },
+            error: function () {
+                showErrorToaster()
+            }
+        });
+    }
 }
 
 

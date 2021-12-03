@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container col-10 m-auto" dir="rtl">
     <div class="row ">
@@ -11,82 +12,105 @@
                 </h5>
             </div>
             <div class="card-body p-0">
-                <ul class="list-group p-0">
-                    <li class="list-group-item">
+                <ul class="list-group list-group-flush p-0">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">نوع الجهاز:</span>
                         <span class="pull-right mr-1">${contract.deviceType}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">الرقم التسلسلي:</span>
                         <span class="pull-right mr-1">${contract.serialNumber}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">المبلع المدفوع:</span>
                         <span class="pull-right mr-1">${contract.payed}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">المتبقي:</span>
                         <span class="pull-right mr-1">${contract.remain}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">الباقي من الاجمالي:</span>
                         <span class="pull-right mr-1">${contract.remainAmount}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">الفائدة الشهرية:</span>
                         <span class="pull-right mr-1">${contract.monthlyAmount}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">يوم الدفع:</span>
                         <span class="pull-right mr-1">${contract.paymentDay}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">اسم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorName}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">رقم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorPhone}</span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">التاريخ:</span>
-                        <span class="pull-right mr-1">${contract.creationDate}</span>
+                        <span class="pull-right mr-1">
+                                 <fmt:parseDate value="${contract.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
+                                                var="creationDate"/>
+                                <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
+                        </span>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item list-group-item-action">
                         <span class="pull-right">الحالة:</span>
-                        <span class="pull-right mr-1">${contract.enabled ? "منتهي" : "مفتوح"}</span>
+                        <span class="pull-right mr-1">${contract.enabled ? "مفتوح" : "منتهي"}</span>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="col-8 p-0 shadow">
-            <table class="table table-striped table-hover">
-                <thead class="table-striped bg-primary text-white shadow"
-                       style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-                <tr>
-                    <th>المبلغ</th>
-                    <th>التاريخ</th>
-                    <th>الملاحظة</th>
-                </tr>
 
-                </thead>
-                <tbody>
-                <c:forEach items="${contract.clientPays}" var="clientPay">
+            <div class="table-responsive" style="max-height: 550px">
+                <table class="table table-striped table-hover">
+                    <thead class="table-striped bg-primary text-white shadow"
+                           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                     <tr>
-                        <td>
-                                ${clientPay.amount}
-                        </td>
-                        <td>
-                                ${clientPay.date}
-                        </td>
-                        <td>
-                                ${clientPay.note}
-                        </td>
+                        <th class="col-1">المبلغ</th>
+                        <th class="col-2">التاريخ</th>
+                        <th class="col-3">الملاحظة</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${contract.clientPays}" var="clientPay">
+                        <tr>
+                            <td>
+                                    ${clientPay.amount}
+                            </td>
+                            <td>
+                                <fmt:parseDate value="${clientPay.date}" pattern="yyyy-MM-dd'T'HH:mm:ss"
+                                               var="clinetPayDate"/>
+                                <fmt:formatDate value="${clinetPayDate}" pattern="yyyy/MM/dd hh:mm a"/>
+                            </td>
+                            <td>
+                                    ${clientPay.note}
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <c:if test="${contract.enabled}">
+                <button class="btn btn-outline-primary pull-right w-100"
+                        data-toggle="modal" data-target="#clientPayModal">
+                    تحصيل مبلغ
+                </button>
+            </c:if>
+
+            <c:if test="${!contract.enabled}">
+                <button class="btn btn-outline-success pull-right w-100">
+                     تفعيل العقد
+                </button>
+            </c:if>
         </div>
     </div>
 </div>
+
+<jsp:include page="_clientPayModal.jsp"/>

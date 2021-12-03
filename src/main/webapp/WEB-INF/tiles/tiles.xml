@@ -23,4 +23,9 @@
     <definition name="contractDetails" extends="paymentsManagementTemplate">
         <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contractsDetails.jsp"/>
     </definition>
+
+    <definition name="clients" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/clients/clients.jsp"/>
+    </definition>
+
 </tiles-definitions>

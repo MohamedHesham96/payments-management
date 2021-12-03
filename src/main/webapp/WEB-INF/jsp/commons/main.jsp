@@ -11,14 +11,16 @@
 <!doctype html>
 <html class="no-js">
 <head>
-    <link href="<c:url value="/bootstrap/bootstrap.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/css/font-awesome.css" />" rel="stylesheet">
-    <link rel="script" href="<c:url value="/plugins/Jquery/jquery-3.6.0.js"/>">
-    <link rel="stylesheet" href="<c:url value="/plugins/toastr/toastr.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/style-ar.css"/>">
     <link rel="stylesheet" href="<c:url value="/css/font-awesome.min.css"/>">
+    <link href="<c:url value="/bootstrap/bootstrap.min.css"/>" rel="stylesheet">
+    <script src="<c:url value="/plugins/Jquery/jquery-3.6.0.js"/>"></script>
+    <script src="<c:url value="/bootstrap/bootstrap.min.js"/>"></script>
+    <link rel="stylesheet" href="<c:url value="/plugins/toastr/toastr.min.css"/>">
     <link rel="script" href="<c:url value="/plugins/toastr/toastr.js"/>">
-    <link rel="script" href="<c:url value="/js/commons.js"/>">
-    <link rel="stylesheet" href="<c:url value="/css/main-ar.css"/>">
+    <script src="<c:url value="/js/commons.js"/>"></script>
+    <script src="<c:url value="/plugins/parsley/parsley.js"/>"></script>
+    <script src="<c:url value="/plugins/parsley/ar.js"/>"></script>
 </head>
 
 <!-- body -->
