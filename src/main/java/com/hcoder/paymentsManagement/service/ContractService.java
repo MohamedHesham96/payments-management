@@ -1,6 +1,8 @@
 package com.hcoder.paymentsManagement.service;
 
+import com.hcoder.paymentsManagement.DTO.Pagination;
 import com.hcoder.paymentsManagement.entities.Contract;
+import org.springframework.data.domain.Page;
 
 public interface ContractService {
 
@@ -9,4 +11,6 @@ public interface ContractService {
     Double sumPaymentDayRemainAmountTotal(Integer paymentDay);
 
     Contract getContract(Integer contractId);
+
+    Page<Contract> getContracts(Pagination pagination);
 }

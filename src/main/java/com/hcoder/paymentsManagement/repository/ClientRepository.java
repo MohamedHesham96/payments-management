@@ -13,10 +13,10 @@ import java.util.List;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
-    @Query("select distinct c.client from Contract c where c.paymentDay = :paymentDay")
+    @Query("select distinct c.client from Contract c where c.paymentDay = :paymentDay and c.enabled = true")
     Page<Client> getClientByPaymentDay(Integer paymentDay, Pageable pageable);
 
-    @Query("select c from Contract c where c.client.id = :clientId and c.paymentDay = :paymentDay")
+    @Query("select c from Contract c where c.client.id = :clientId and c.paymentDay = :paymentDay and c.enabled = true")
     List<Contract> getClientContracts(Integer clientId, Integer paymentDay);
 }
 

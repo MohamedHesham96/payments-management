@@ -31,7 +31,7 @@
                 <c:forEach items="${clients}" var="client">
                     <tr>
                         <td>
-                            <a href="/clients/${client.id}}">${client.name}</a>
+                            <a href="/clients/${client.id}">${client.name}</a>
                         </td>
                         <td>
                                 ${client.phone}

@@ -20,6 +20,10 @@
         <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contracts.jsp"/>
     </definition>
 
+    <definition name="paymentDayContracts" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/paymentDayContracts.jsp"/>
+    </definition>
+
     <definition name="contractDetails" extends="paymentsManagementTemplate">
         <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contractsDetails.jsp"/>
     </definition>

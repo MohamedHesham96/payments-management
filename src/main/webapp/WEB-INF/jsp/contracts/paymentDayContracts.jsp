@@ -7,8 +7,9 @@
     <div class="card shadow">
         <div class="card-header">
             <h4 class="card-title text-primary pull-right">
-                العقود
-                (${contracts.size()})
+                اقساط يوم
+                (${paymentDay}) -
+                للعميل
             </h4>
         </div>
         <div class="card-body shadow">

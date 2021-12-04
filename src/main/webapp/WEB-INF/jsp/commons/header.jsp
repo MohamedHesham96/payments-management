@@ -22,10 +22,17 @@
         <ul class="navbar-nav mr-auto">
 
             <li style="margin: 5px;" class="">
-            <a class="btn bg-success text-white font-weight-bold"
-                    style="padding: 10px;" href="/clients">
-                العملاء
-            </a>
+                <a class="btn bg-success text-white font-weight-bold"
+                   style="padding: 10px;" href="/contracts">
+                    العقود
+                </a>
+            </li>
+
+            <li style="margin: 5px;" class="">
+                <a class="btn bg-success text-white font-weight-bold"
+                   style="padding: 10px;" href="/clients">
+                    العملاء
+                </a>
             </li>
 
 

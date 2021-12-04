@@ -84,11 +84,9 @@ public class ClientsController extends BaseController {
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer clientId,
                                                @PathVariable Integer paymentDay) {
 
-        ModelAndView paymentDayClientsMV = new ModelAndView("contracts");
+        ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayContracts");
         List<Contract> contracts = clientService.getClientContracts(clientId, paymentDay);
-
         paymentDayClientsMV.addObject("contracts", contracts);
-
         return paymentDayClientsMV;
     }
 }
