@@ -6,7 +6,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-lgl modal-dialog-centered" role="document">
         <div class="modal-content" dir="rtl">
-            <div class="modal-header bg-primary text-white">
+            <div class="modal-header bg-primary text-white p-2">
                 <h4 class="modal-title">إضافة عقد</h4>
             </div>
             <div class="modal-body pt-1">
@@ -125,19 +125,21 @@
                         </select>
                     </div>
 
-                    <div class="mt-2">
-                        <label class="pull-right">اسم الضامن</label>
-                        <input name="guarantorName" placeholder="اسم الضامن"
-                               class="form-control text-right" data-parsley-maxlength="50"
-                               data-parsley-required="true" data-parsley-trigger="input"/>
-                    </div>
+                 <div class="row mt-2">
+                     <div class="col-6">
+                         <label class="pull-right">اسم الضامن</label>
+                         <input name="guarantorName" placeholder="اسم الضامن"
+                                class="form-control text-right" data-parsley-maxlength="50"
+                                data-parsley-required="true" data-parsley-trigger="input"/>
+                     </div>
 
-                    <div class="mt-2">
-                        <label class="pull-right">تيليفون الضامن</label>
-                        <input name="guarantorPhone" placeholder="تيليفون الضامن"
-                               class="form-control text-right" data-parsley-maxlength="11"
-                               data-parsley-required="true" data-parsley-trigger="input"/>
-                    </div>
+                     <div class="col-6">
+                         <label class="pull-right">تيليفون الضامن</label>
+                         <input name="guarantorPhone" placeholder="تيليفون الضامن"
+                                class="form-control text-right" data-parsley-maxlength="11"
+                                data-parsley-required="true" data-parsley-trigger="input"/>
+                     </div>
+                 </div>
                 </form>
             </div>
             <div class="modal-footer">
