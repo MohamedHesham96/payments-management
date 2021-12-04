@@ -2,6 +2,7 @@ package com.hcoder.paymentsManagement.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "CLIENT")
@@ -19,6 +20,10 @@ public class Client {
 
     @Column(name = "CREATION_DATE")
     private LocalDateTime creationDate;
+
+    @OneToMany(mappedBy = "client")
+    @OrderBy("creationDate desc")
+    private List<Contract> contracts;
 
     public int getId() {
         return id;
@@ -50,5 +55,13 @@ public class Client {
 
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -40,5 +41,16 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client saveClient(Client client) {
         return clientRepository.save(client);
+    }
+
+    @Override
+    public void deleteClient(Integer clientId) {
+        clientRepository.deleteById(clientId);
+    }
+
+    @Override
+    public Client getClient(Integer clientId) {
+        Optional<Client> clientOptional = clientRepository.findById(clientId);
+        return clientOptional.isPresent() ? clientOptional.get() : null;
     }
 }

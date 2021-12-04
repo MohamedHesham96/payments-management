@@ -24,6 +24,7 @@
                     <th>الاسم</th>
                     <th>التيليفون</th>
                     <th>تاريخ التسجيل</th>
+                    <th>العمليات</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,13 @@
                                            var="creationDate"/>
                             <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                         </td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger text-danger"
+                                    onclick="deleteEntity(${client.id}, '/clients')">
+                                حذف
+                            </button>
+                        </td>
+
                     </tr>
                 </c:forEach>
                 </tbody>

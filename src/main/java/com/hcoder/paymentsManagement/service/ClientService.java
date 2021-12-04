@@ -16,4 +16,8 @@ public interface ClientService {
     Page<Client> getClients(Pagination pagination);
 
     Client saveClient(Client client);
+
+    void deleteClient(Integer clientId);
+
+    Client getClient(Integer clientId);
 }

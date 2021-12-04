@@ -49,6 +49,23 @@ public class ClientsController extends BaseController {
         }
     }
 
+    @DeleteMapping("/{clientId}")
+    public @ResponseBody
+    ResponseModal deleteClient(@PathVariable Integer clientId) {
+        try {
+            Client client = clientService.getClient(clientId);
+            if (client == null) {
+                return new ResponseModal(false, "العميل ليس موجود بالفعل");
+            } else if (client.getContracts() != null && !client.getContracts().isEmpty()) {
+                return new ResponseModal(false, "لا يمكن حذف العميل ,لديه عقود مسجلة");
+            }
+            clientService.deleteClient(clientId);
+            return new ResponseModal(true, "تم حذف العميل بنجاح");
+        } catch (Exception e) {
+            return new ResponseModal(false, "حدث خطأ ,لم يتم حذف العميل");
+        }
+    }
+
     @GetMapping("/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer paymentDay) {
         Pagination pagination = new Pagination(0, 10);

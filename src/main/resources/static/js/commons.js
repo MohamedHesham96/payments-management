@@ -112,18 +112,18 @@ function refreshCurrentPage(timeout) {
     setTimeout("location.reload();", timeout);
 }
 
-function showToaster(status, message) {
+function showToaster(status, message, timeout) {
     if (status) {
         toastr.success(message);
     } else {
         toastr.error(message);
     }
-    refreshCurrentPage(3000);
+    refreshCurrentPage(timeout);
 }
 
-function showErrorToaster() {
+function showErrorToaster(timeout) {
     toastr.error('حدث خطأ ما');
-    refreshCurrentPage(3000);
+    refreshCurrentPage(timeout);
 }
 
 function changeLocale(requestedLocale) {
@@ -268,13 +268,27 @@ function postForm(formId, url) {
             data: JSON.stringify(jsonObject),
             contentType: "application/json",
             success: function (response) {
-                showToaster(response.status, response.message)
+                showToaster(response.status, response.message, 3000);
             },
             error: function () {
-                showErrorToaster()
+                showErrorToaster(4000);
             }
         });
     }
 }
+
+function deleteEntity(elementId, url) {
+    $.ajax({
+        type: 'DELETE',
+        url: url + "/" + elementId,
+        success: function (response) {
+            showToaster(response.status, response.message, 3000)
+        },
+        error: function () {
+            showErrorToaster(4000)
+        }
+    });
+}
+
 
 
