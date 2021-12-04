@@ -11,7 +11,8 @@
                 (${contracts.size()})
             </h4>
 
-            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#contractModal">
+            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#contractModal"
+                    onclick="clearForm('contractForm')">
                 إضافة عقد
             </button>
         </div>
@@ -70,3 +71,5 @@
 </div>
 
 <jsp:include page="_contractModal.jsp"/>
+
+<script src="<c:url value="/js/contracts.js"/>"></script>

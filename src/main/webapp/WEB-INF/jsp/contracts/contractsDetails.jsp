@@ -13,43 +13,51 @@
             </div>
             <div class="card-body p-0">
                 <ul class="list-group list-group-flush p-0">
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">نوع الجهاز:</span>
                         <span class="pull-right mr-1">${contract.deviceType}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">الرقم التسلسلي:</span>
                         <span class="pull-right mr-1">${contract.serialNumber}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">المبلع المدفوع:</span>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">سعر الجهاز الأصلي:</span>
+                        <span class="pull-right mr-1">${contract.devicePrice}</span>
+                    </li>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">سعر الجهاز قسط:</span>
+                        <span class="pull-right mr-1">${contract.devicePriceAfterInterest}</span>
+                    </li>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">المبلغ المدفوع:</span>
                         <span class="pull-right mr-1">${contract.payed}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">المتبقي:</span>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">المتبقي وقت الدفع:</span>
                         <span class="pull-right mr-1">${contract.remain}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">الباقي من الاجمالي:</span>
-                        <span class="pull-right mr-1">${contract.remainAmount}</span>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">الباقي من الإجمالي:</span>
+                        <span class="pull-right mr-1 bg-danger text-white pl-1 pr-1">${contract.remainAmount}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">الفائدة الشهرية:</span>
                         <span class="pull-right mr-1">${contract.monthlyInterest}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">يوم الدفع:</span>
                         <span class="pull-right mr-1">${contract.paymentDay}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">اسم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorName}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">رقم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorPhone}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">التاريخ:</span>
                         <span class="pull-right mr-1">
                                  <fmt:parseDate value="${contract.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
@@ -57,7 +65,7 @@
                                 <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                         </span>
                     </li>
-                    <li class="list-group-item list-group-item-action">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">الحالة:</span>
                         <span class="pull-right mr-1">${contract.enabled ? "مفتوح" : "منتهي"}</span>
                     </li>

@@ -1,9 +1,6 @@
 package com.hcoder.paymentsManagement.DTO;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 public class ContractDTO {
@@ -23,13 +20,19 @@ public class ContractDTO {
     @Size(max = 100, message = "الرقم التسلسلي لا يتعدى ال50 حرف")
     private String serialNumber;
 
+    @NotNull(message = "يجب ادخال سعر الجهاز")
+    private Double devicePrice;
+
     @NotNull(message = "يجب ادخال المبلغ المدفوع")
     private Double payed;
 
-    @NotNull(message = "يجب ادخال المبلغ المتبقي")
     private Double remain;
 
     private Double remainAmount;
+
+    @NotNull(message = "يجب ادخال عدد شهور الدفع")
+    @Max(value = 9, message = "عدد الشهور لا تتعدى ال9 شهور")
+    private Double monthsNumber;
 
     @NotNull(message = "يجب ادخال الفائدة الشهرية")
     private Double monthlyInterest;
@@ -83,6 +86,14 @@ public class ContractDTO {
         this.serialNumber = serialNumber;
     }
 
+    public Double getDevicePrice() {
+        return devicePrice;
+    }
+
+    public void setDevicePrice(Double devicePrice) {
+        this.devicePrice = devicePrice;
+    }
+
     public Double getPayed() {
         return payed;
     }
@@ -105,6 +116,14 @@ public class ContractDTO {
 
     public void setRemainAmount(Double remainAmount) {
         this.remainAmount = remainAmount;
+    }
+
+    public Double getMonthsNumber() {
+        return monthsNumber;
+    }
+
+    public void setMonthsNumber(Double monthsNumber) {
+        this.monthsNumber = monthsNumber;
     }
 
     public Double getMonthlyInterest() {

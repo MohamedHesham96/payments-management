@@ -52,9 +52,15 @@ public class ContractsController extends BaseController {
             contract.setClient(new Client(contractDTO.getClientId()));
             contract.setDeviceType(contractDTO.getDeviceType());
             contract.setSerialNumber(contractDTO.getSerialNumber());
+            contract.setDevicePrice(contractDTO.getDevicePrice());
+            Double devicePriceAfterInterest = contractDTO.getDevicePrice()
+                    + contractDTO.getMonthsNumber()
+                    * contractDTO.getMonthlyInterest();
+            contract.setDevicePriceAfterInterest(devicePriceAfterInterest);
             contract.setPayed(contractDTO.getPayed());
-            contract.setRemain(contractDTO.getRemain());
-            contract.setRemainAmount(contractDTO.getRemain());
+            contract.setRemain(devicePriceAfterInterest - contractDTO.getPayed());
+            contract.setRemainAmount(contract.getRemain());
+            contract.setMonthsNumber(contractDTO.getMonthsNumber());
             contract.setMonthlyInterest(contractDTO.getMonthlyInterest());
             contract.setPaymentDay(contractDTO.getPaymentDay());
             contract.setGuarantorName(contractDTO.getGuarantorName());

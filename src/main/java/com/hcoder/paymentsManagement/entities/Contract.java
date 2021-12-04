@@ -16,28 +16,37 @@ public class Contract {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @Column(name = "DEVICE_TYPE")
+    @Column(name = "device_type")
     private String deviceType;
 
-    @Column(name = "SERIAL_NUMBER")
+    @Column(name = "serial_number")
     private String serialNumber;
 
-    @Column(name = "PAYED")
+    @Column(name = "device_price")
+    private Double devicePrice;
+
+    @Column(name = "device_price_after_interest")
+    private Double devicePriceAfterInterest;
+
+    @Column(name = "payed")
     private Double payed;
 
-    @Column(name = "REMAIN")
+    @Column(name = "remain")
     private Double remain;
 
-    @Column(name = "REMAIN_AMOUNT")
+    @Column(name = "remain_amount")
     private Double remainAmount;
+
+    @Column(name = "months_number")
+    private Double monthsNumber;
 
     @Column(name = "monthly_interest")
     private Double monthlyInterest;
 
-    @Column(name = "PAYMENT_DAY")
+    @Column(name = "payment_day")
     private Integer paymentDay;
 
-    @Column(name = "GUARANTOR_NAME")
+    @Column(name = "guarantor_name")
     private String guarantorName;
 
     @Column(name = "guarantor_phone")
@@ -85,6 +94,22 @@ public class Contract {
         this.serialNumber = serialNumber;
     }
 
+    public Double getDevicePrice() {
+        return devicePrice;
+    }
+
+    public void setDevicePrice(Double devicePrice) {
+        this.devicePrice = devicePrice;
+    }
+
+    public Double getDevicePriceAfterInterest() {
+        return devicePriceAfterInterest;
+    }
+
+    public void setDevicePriceAfterInterest(Double devicePriceAfterInterest) {
+        this.devicePriceAfterInterest = devicePriceAfterInterest;
+    }
+
     public Double getPayed() {
         return payed;
     }
@@ -107,6 +132,14 @@ public class Contract {
 
     public void setRemainAmount(Double remainAmount) {
         this.remainAmount = remainAmount;
+    }
+
+    public Double getMonthsNumber() {
+        return monthsNumber;
+    }
+
+    public void setMonthsNumber(Double monthsNumber) {
+        this.monthsNumber = monthsNumber;
     }
 
     public Double getMonthlyInterest() {

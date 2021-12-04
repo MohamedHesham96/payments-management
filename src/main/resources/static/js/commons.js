@@ -108,30 +108,16 @@ function convertObjToJSON(object) {
 }
 
 function refreshCurrentPage(timeout) {
-
     setTimeout("location.reload();", timeout);
 }
 
-function showToaster(status, message, timeout) {
-    if (status) {
-        toastr.success(message);
-    } else {
-        toastr.error(message);
-    }
-    refreshCurrentPage(timeout);
+function showSuccessToaster(message) {
+    toastr.success(message);
 }
 
-function showErrorToaster(timeout) {
-    toastr.error('حدث خطأ ما');
-    refreshCurrentPage(timeout);
+function showErrorToaster(message) {
+    toastr.error(message);
 }
-
-function changeLocale(requestedLocale) {
-    $.get("/clinic/changeLocale", {requestedLocale: requestedLocale}, function () {
-        refreshCurrentPage();
-    });
-}
-
 
 function convertToJSONObject(formId) {
     var arrayData, objectData;
@@ -268,10 +254,16 @@ function postForm(formId, url) {
             data: JSON.stringify(jsonObject),
             contentType: "application/json",
             success: function (response) {
-                showToaster(response.status, response.message, 3000);
+                if (response.status == true) {
+                    showSuccessToaster(response.message);
+                    refreshCurrentPage(2000);
+                } else {
+                    showErrorToaster(response.message);
+                }
             },
             error: function () {
-                showErrorToaster(4000);
+                toastr.error('حدث خطأ ما');
+                refreshCurrentPage(4000);
             }
         });
     }
@@ -282,13 +274,22 @@ function deleteEntity(elementId, url) {
         type: 'DELETE',
         url: url + "/" + elementId,
         success: function (response) {
-            showToaster(response.status, response.message, 3000)
+            if (response.status == true) {
+                showSuccessToaster(response.message);
+                refreshCurrentPage(2000);
+            } else {
+                showErrorToaster(response.message);
+            }
         },
         error: function () {
-            showErrorToaster(4000)
+            toastr.error('حدث خطأ ما');
+            refreshCurrentPage(4000);
+
         }
     });
 }
 
-
-
+function clearForm(formId) {
+    $('#' + formId).parsley().reset();
+    $("#" + formId)[0].reset();
+}

@@ -2,10 +2,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
 <div class="modal fade" id="contractModal" tabindex="-1" role="dialog" aria-labelledby="contractModal"
      aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lgl modal-dialog-centered" role="document">
         <div class="modal-content" dir="rtl">
             <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title">إضافة عقد</h5>
@@ -36,27 +35,82 @@
                                class="form-control text-right" data-parsley-maxlength="50"
                                data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
+                    <div class="card w-100 border-primary">
+                        <div class="card-header bg-primary text-white text-right pr-2 p-1">
+                                <span class="card-title">
+                                    حسابات نظام القسط
+                                </span>
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="pull-right text-size-15 mb-1">سعر الجهاز</span>
+                                    <input id="devicePrice" name="devicePrice"
+                                           oninput="updateDevicePriceAfterMonthlyInterest()"
+                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           data-parsley-required="true" data-parsley-trigger="input"/>
+                                </div>
 
-                    <div class="form-group">
-                        <label class="pull-right">المبلغ المدفوع</label>
-                        <input name="payed" placeholder="المبلغ المدفوع"
-                               class="form-control text-right" data-parsley-type="number"
-                               data-parsley-required="true" data-parsley-trigger="input"/>
+                                <div class="col-6">
+                                    <span class="pull-right text-size-15 mb-1">المبلغ المدفوع</span>
+                                    <input id="payed" name="payed" placeholder=""
+                                           oninput="updateRemainAmount()"
+                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           data-parsley-required="true" data-parsley-trigger="input"/>
+                                </div>
+                            </div>
+
+                            <div class="row mt-1">
+                                <div class="col-6">
+                                    <span class="pull-right text-size-15 mb-1">عدد شهور</span>
+                                    <select id="monthsNumber" name="monthsNumber"
+                                            oninput="updateDevicePriceAfterMonthlyInterest()"
+                                            class="form-control form-control-sm text-right"
+                                            data-parsley-required="true" data-parsley-trigger="change">
+                                        <option value="">-- اختار عدد شهور الدفع --</option>
+                                        <option value="0">غير محدد</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-6">
+                                    <span class="pull-right text-size-15 mb-1">الفائدة الشهرية</span>
+                                    <input id="monthlyInterest" name="monthlyInterest"
+                                           oninput="updateDevicePriceAfterMonthlyInterest()"
+                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           data-parsley-required="true" data-parsley-trigger="input"/>
+                                </div>
+                            </div>
+
+                            <hr class="bg-primary">
+
+                            <div class="container mt-1">
+                                <div class="row">
+                                    <label class="pull-right">
+                                        الجهاز قسط:
+                                        <span id="devicePriceAfterMonthlyInterestSpan"> 0 + 0 * 0 = 0</span>
+                                    </label>
+                                </div>
+
+                                <div class="row">
+                                    <label class="pull-right">
+                                        باقي المبلغ:
+                                        <span id="remainAmountSpan"> 0 - 0 = 0</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="pull-right">باقي المبلغ</label>
-                        <input name="remain" placeholder="باقي المبلغ"
-                               class="form-control text-right" data-parsley-type="number"
-                               data-parsley-required="true" data-parsley-trigger="input"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="pull-right">الفائدة الشهرية</label>
-                        <input name="monthlyInterest" placeholder="الفائدة الشهرية"
-                               class="form-control text-right" data-parsley-type="number"
-                               data-parsley-required="true" data-parsley-trigger="input"/>
-                    </div>
+                    <div class="clearfix"></div>
 
 
                     <div class="form-group">
@@ -65,12 +119,12 @@
                                 data-parsley-required="true" data-parsley-trigger="change">
                             <option value="">-- اختار يوم الدفع --</option>
                             <option value="0">غير محدد</option>
-                            <option value="5"> يوم 5</option>
-                            <option value="10"> يوم 10</option>
-                            <option value="15"> يوم 15</option>
-                            <option value="20"> يوم 20</option>
-                            <option value="25"> يوم 25</option>
-                            <option value="30"> يوم 30</option>
+                            <option value="5">يوم 5</option>
+                            <option value="10">يوم 10</option>
+                            <option value="15">يوم 15</option>
+                            <option value="20">يوم 20</option>
+                            <option value="25">يوم 25</option>
+                            <option value="30">يوم 30</option>
                         </select>
                     </div>
 
