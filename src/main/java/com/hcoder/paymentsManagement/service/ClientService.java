@@ -20,4 +20,6 @@ public interface ClientService {
     void deleteClient(Integer clientId);
 
     Client getClient(Integer clientId);
+
+    List<Client> getAllClients();
 }

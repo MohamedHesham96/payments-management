@@ -1,57 +1,55 @@
-package com.hcoder.paymentsManagement.entities;
+package com.hcoder.paymentsManagement.DTO;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity
-@Table(name = "CONTRACT")
-public class Contract {
+public class ContractDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @NotNull(message = "يجب اختيار العميل")
+    private Integer clientId;
 
-    @Column(name = "DEVICE_TYPE")
+    @NotNull(message = "يجب ادخال نوع الجهاز")
+    @NotBlank(message = "يجب ادخال نوع الجهاز")
+    @Size(max = 100, message = "نوع الجهاز لا يتعدى ال50 حرف")
     private String deviceType;
 
-    @Column(name = "SERIAL_NUMBER")
+    @NotNull(message = "يجب ادخال نوع الجهاز")
+    @NotBlank(message = "يجب ادخال نوع الجهاز")
+    @Size(max = 100, message = "الرقم التسلسلي لا يتعدى ال50 حرف")
     private String serialNumber;
 
-    @Column(name = "PAYED")
+    @NotNull(message = "يجب ادخال المبلغ المدفوع")
     private Double payed;
 
-    @Column(name = "REMAIN")
+    @NotNull(message = "يجب ادخال المبلغ المتبقي")
     private Double remain;
 
-    @Column(name = "REMAIN_AMOUNT")
     private Double remainAmount;
 
-    @Column(name = "monthly_interest")
+    @NotNull(message = "يجب ادخال الفائدة الشهرية")
     private Double monthlyInterest;
 
-    @Column(name = "PAYMENT_DAY")
+    @NotNull(message = "يجب ادخال يوم دفع القسط")
     private Integer paymentDay;
 
-    @Column(name = "GUARANTOR_NAME")
+    @NotNull(message = "يجب ادخال اسم الضامن")
+    @NotBlank(message = "يجب ادخال اسم الضامن")
     private String guarantorName;
 
-    @Column(name = "guarantor_phone")
+    @NotNull(message = "يجب ادخال تيليفون الضامن")
+    @NotBlank(message = "يجب ادخال تيليفون الضامن")
+    @Size(min = 11, max = 11, message = "رقم الضامن لا يتعدى ولا يقل عن 11 رقم")
+    @Pattern(regexp = "^01[0-2|5]{1}[0-9]{8}", message = "رقم العميل غير صحيح")
     private String guarantorPhone;
 
-    @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-    @Column(name = "enabled")
-    private Boolean enabled;
-
-    @OneToMany(mappedBy = "contract")
-    @OrderBy("date desc")
-    private List<ClientPay> clientPays;
+    private boolean enabled;
 
     public int getId() {
         return id;
@@ -61,12 +59,12 @@ public class Contract {
         this.id = id;
     }
 
-    public Client getClient() {
-        return client;
+    public Integer getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
     }
 
     public String getDeviceType() {
@@ -149,19 +147,11 @@ public class Contract {
         this.creationDate = creationDate;
     }
 
-    public Boolean getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
-    }
-
-    public List<ClientPay> getClientPays() {
-        return clientPays;
-    }
-
-    public void setClientPays(List<ClientPay> clientPays) {
-        this.clientPays = clientPays;
     }
 }

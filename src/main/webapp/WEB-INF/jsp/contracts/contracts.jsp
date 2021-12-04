@@ -10,6 +10,10 @@
                 العقود
                 (${contracts.size()})
             </h4>
+
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#contractModal">
+                إضافة عقد
+            </button>
         </div>
         <div class="card-body shadow">
             <table class="table table-striped table-hover">
@@ -17,6 +21,7 @@
                 <thead class="table-striped bg-primary text-white shadow"
                        style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                 <tr>
+                    <th>اسم العميل</th>
                     <th>نوع الجهاز</th>
                     <th>الرقم التسلسلي</th>
                     <th>اسم الضامن</th>
@@ -29,6 +34,9 @@
                 <tbody>
                 <c:forEach items="${contracts}" var="contract">
                     <tr>
+                        <td>
+                            <a href="/clients/${contract.client.id}">${contract.client.name}</a>
+                        </td>
                         <td>
                             <a href="/contracts/${contract.id}">${contract.deviceType}</a>
                         </td>
@@ -51,5 +59,6 @@
 
         </div>
     </div>
-
 </div>
+
+<jsp:include page="_contractModal.jsp"/>

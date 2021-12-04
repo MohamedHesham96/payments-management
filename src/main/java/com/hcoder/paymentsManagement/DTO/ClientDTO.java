@@ -18,7 +18,7 @@ public class ClientDTO {
     @Pattern(regexp = "^01[0-2|5]{1}[0-9]{8}", message = "رقم العميل غير صحيح")
     @NotNull(message = "يجب ادخل تليفون العميل")
     @NotBlank(message = "يجب ادخل تليفون العميل")
-    @Size(max = 11, message = "رقم العميل لا يتعدى ولا يقل عن 11 رقم")
+    @Size(min = 11, max = 11, message = "رقم العميل لا يتعدى ولا يقل عن 11 رقم")
     private String phone;
 
     private LocalDateTime creationDate;

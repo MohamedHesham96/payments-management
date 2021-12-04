@@ -53,4 +53,9 @@ public class ClientServiceImpl implements ClientService {
         Optional<Client> clientOptional = clientRepository.findById(clientId);
         return clientOptional.isPresent() ? clientOptional.get() : null;
     }
+
+    @Override
+    public List<Client> getAllClients() {
+        return clientRepository.findAll();
+    }
 }

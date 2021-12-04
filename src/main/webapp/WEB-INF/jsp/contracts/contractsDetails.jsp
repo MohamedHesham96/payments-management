@@ -35,7 +35,7 @@
                     </li>
                     <li class="list-group-item list-group-item-action">
                         <span class="pull-right">الفائدة الشهرية:</span>
-                        <span class="pull-right mr-1">${contract.monthlyAmount}</span>
+                        <span class="pull-right mr-1">${contract.monthlyInterest}</span>
                     </li>
                     <li class="list-group-item list-group-item-action">
                         <span class="pull-right">يوم الدفع:</span>
@@ -106,7 +106,7 @@
 
             <c:if test="${!contract.enabled}">
                 <button class="btn btn-outline-success pull-right w-100">
-                     تفعيل العقد
+                    تفعيل العقد
                 </button>
             </c:if>
         </div>

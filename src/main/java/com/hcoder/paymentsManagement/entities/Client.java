@@ -25,6 +25,13 @@ public class Client {
     @OrderBy("creationDate desc")
     private List<Contract> contracts;
 
+    public Client() {
+    }
+
+    public Client(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

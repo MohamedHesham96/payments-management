@@ -21,6 +21,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
+            <li style="margin: 5px;" class=""><a
+                    class="btn bg-light text-dark font-weight-bold"
+                    style="padding: 10px;" href="/home">الرئيسية | <%=LocalDate.now().toString()%>
+            </a></li>
+
+
+            <li style="margin-left: 5px; margin-right: 5px">
+                <h1 class="text-white ">|</h1>
+            </li>
+
             <li style="margin: 5px;" class="">
                 <a class="btn bg-success text-white font-weight-bold"
                    style="padding: 10px;" href="/contracts">
@@ -34,17 +44,6 @@
                     العملاء
                 </a>
             </li>
-
-
-            <li style="margin-left: 5px; margin-right: 5px">
-                <h1 class="text-white ">|</h1>
-            </li>
-
-            <li style="margin: 5px;" class=""><a
-                    class="btn bg-light text-dark font-weight-bold"
-                    style="padding: 10px;" href="/home">الرئيسية | <%=LocalDate.now().toString()%>
-            </a></li>
-
 
             <li style="margin-left: 5px; margin-right: 5px">
                 <h1 class="text-white ">|</h1>
