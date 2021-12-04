@@ -7,7 +7,7 @@
 
 <style>
     .text-size-50 {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     a:hover {
@@ -15,18 +15,17 @@
     }
 </style>
 
-<div class=" container mt-2" dir="rtl">
-
+<div class="container p-0" dir="rtl">
     <div class="card row shadow">
         <div class="card-header shadow-sm text-center">
-            <h2 class="card-title text-primary">
+            <h3 class="card-title text-primary">
                 الاقساط
-            </h2>
+            </h3>
         </div>
-        <div class="card-body shadow">
+        <div class="card-body shadow pb-0">
             <div class="row container m-auto" dir="rtl">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm p-0">
                         <div class="card-header shadow-sm shadow-sm">
                             <a href="/clients//paymentDay/5">
                                 <h5 class="card-title text-size-50 text-center">
@@ -77,10 +76,7 @@
                 </div>
             </div>
 
-            <br>
-
             <div class="row container m-auto" dir="rtl">
-
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">

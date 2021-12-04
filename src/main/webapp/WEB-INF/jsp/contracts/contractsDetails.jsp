@@ -105,8 +105,8 @@
             </c:if>
 
             <c:if test="${!contract.enabled}">
-                <div class="alert alert-danger text-center">
-                    هذا القعد منتهي
+                <div class="alert alert-success text-center">
+                    هذا العقد منتهي
                 </div>
             </c:if>
 
