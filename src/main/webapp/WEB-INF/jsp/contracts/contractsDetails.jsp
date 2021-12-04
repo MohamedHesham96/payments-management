@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="col-8 p-0 shadow">
+        <div class="col-8 p-0 shadow" style="height:100%">
 
             <div class="table-responsive" style="max-height: 550px">
                 <table class="table table-striped table-hover">
@@ -105,10 +105,23 @@
             </c:if>
 
             <c:if test="${!contract.enabled}">
-                <button class="btn btn-outline-success pull-right w-100">
-                    تفعيل العقد
-                </button>
+                <div class="alert alert-danger text-center">
+                    هذا القعد منتهي
+                </div>
             </c:if>
+
+            <%--            <c:if test="${contract.enabled}">--%>
+            <%--                <button class="btn btn-outline-primary pull-right w-100"--%>
+            <%--                        data-toggle="modal" data-target="#clientPayModal">--%>
+            <%--                    تحصيل مبلغ--%>
+            <%--                </button>--%>
+            <%--            </c:if>--%>
+
+            <%--            <c:if test="${!contract.enabled}">--%>
+            <%--                <button class="btn btn-outline-success pull-right w-100">--%>
+            <%--                    تفعيل العقد--%>
+            <%--                </button>--%>
+            <%--            </c:if>--%>
         </div>
     </div>
 </div>

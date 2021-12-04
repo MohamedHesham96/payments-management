@@ -40,4 +40,9 @@ public class ContractServiceImpl implements ContractService {
         Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize(), Sort.by("creationDate").descending());
         return contractRepository.findAll(pageable);
     }
+
+    @Override
+    public void deleteContract(Integer contractId) {
+        contractRepository.deleteById(contractId);
+    }
 }

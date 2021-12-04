@@ -23,12 +23,21 @@
 
             <li style="margin: 5px;" class=""><a
                     class="btn bg-light text-dark font-weight-bold"
-                    style="padding: 10px;" href="/home">الرئيسية | <%=LocalDate.now().toString()%>
+                    style="padding: 10px;" href="/home">
+                الرئيسية
             </a></li>
 
 
             <li style="margin-left: 5px; margin-right: 5px">
                 <h1 class="text-white ">|</h1>
+            </li>
+
+
+            <li style="margin: 5px;" class="">
+                <a class="btn bg-success text-white font-weight-bold"
+                   style="padding: 10px;" href="/clients">
+                    العملاء
+                </a>
             </li>
 
             <li style="margin: 5px;" class="">
@@ -38,45 +47,43 @@
                 </a>
             </li>
 
-            <li style="margin: 5px;" class="">
-                <a class="btn bg-success text-white font-weight-bold"
-                   style="padding: 10px;" href="/clients">
-                    العملاء
-                </a>
-            </li>
-
             <li style="margin-left: 5px; margin-right: 5px">
                 <h1 class="text-white ">|</h1>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/5">يوم 5</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/5">يوم 5</a>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/10">يوم 10</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/10">يوم 10</a>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/15">يوم 15</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/15">يوم 15</a>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/20">يوم 20</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/20">يوم 20</a>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/25">يوم 25</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/25">يوم 25</a>
             </li>
 
             <li style="margin: 5px;"><a
                     class="btn bg-primary text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="/clients/30">يوم 30</a>
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/30">يوم 30</a>
+            </li>
+
+            <li style="margin: 5px;"><a
+                    class="btn bg-primary text-white font-weight-bold "
+                    style="padding: 10px; width: 100px" href="/clients/paymentDay/0">غير محدد</a>
             </li>
 
             <li style="margin-left: 5px; margin-right: 5px">

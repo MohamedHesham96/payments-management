@@ -11,7 +11,7 @@
                 (${(clients.size())})
             </h4>
 
-            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#clientModal">
+            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#clientModal">
                 إضافة عميل
             </button>
         </div>

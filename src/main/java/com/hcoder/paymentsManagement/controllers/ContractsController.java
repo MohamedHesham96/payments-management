@@ -32,7 +32,6 @@ public class ContractsController extends BaseController {
     @Autowired
     ClientService clientService;
 
-
     @GetMapping
     public ModelAndView getContracts() {
         Pagination pagination = new Pagination(0, 10);
@@ -101,6 +100,23 @@ public class ContractsController extends BaseController {
             return new ResponseModal(true, "تم تحصيل المبلغ بنجاح");
         } catch (Exception e) {
             return new ResponseModal(false, "حدث حطأ,لم تم تحصيل المبلغ");
+        }
+    }
+
+    @DeleteMapping("/{contractId}")
+    public @ResponseBody
+    ResponseModal deleteContract(@PathVariable Integer contractId) {
+        try {
+            Contract contract = contractService.getContract(contractId);
+            if (contract == null) {
+                return new ResponseModal(false, "القعد ليس موجود بالفعل");
+            } else if (contract.getClientPays() != null && !contract.getClientPays().isEmpty()) {
+                return new ResponseModal(false, "لا يمكن حذف العقد ,لديه مبالغ مدفوعة");
+            }
+            contractService.deleteContract(contractId);
+            return new ResponseModal(true, "تم حذف العقد بنجاح");
+        } catch (Exception e) {
+            return new ResponseModal(false, "حدث خطأ ,لم يتم حذف العقد");
         }
     }
 }

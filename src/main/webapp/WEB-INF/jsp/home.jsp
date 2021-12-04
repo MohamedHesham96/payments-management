@@ -9,12 +9,13 @@
     .text-size-50 {
         font-size: 35px;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: none;
     }
 </style>
 
-<div class=" container mt-5" dir="rtl">
+<div class=" container mt-2" dir="rtl">
 
     <div class="card row shadow">
         <div class="card-header shadow-sm text-center">
@@ -27,7 +28,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card shadow-sm">
                         <div class="card-header shadow-sm shadow-sm">
-                            <a href="/clients/5">
+                            <a href="/clients//paymentDay/5">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 5
                                 </h5>
@@ -44,7 +45,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients/10" class="text">
+                            <a href="/clients//paymentDay/10" class="text">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 10
                                 </h5>
@@ -61,7 +62,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients/15">
+                            <a href="/clients//paymentDay/15">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 15
                                 </h5>
@@ -83,7 +84,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients/20">
+                            <a href="/clients//paymentDay/20">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 20
                                 </h5>
@@ -100,7 +101,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients/25">
+                            <a href="/clients//paymentDay/25">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 25
                                 </h5>
@@ -117,7 +118,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients/30">
+                            <a href="/clients//paymentDay/30">
                                 <h5 class="card-title text-size-50 text-center">
                                     يوم 30
                                 </h5>
@@ -126,6 +127,25 @@
                             <h5 class="text-center">
                                 المبلغ المتبقي:
                                 ${remainAmountDay30 ne null ? remainAmountDay30 : 0.0}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 m-auto">
+                    <div class="card">
+                        <div class="card-header shadow-sm">
+                            <a href="/clients//paymentDay/0">
+                                <h5 class="card-title text-size-50 text-center">
+                                    غير محدد
+                                </h5>
+                            </a>
+                            <hr>
+                            <h5 class="text-center">
+                                المبلغ المتبقي:
+                                ${remainAmountDay0 ne null ? remainAmountDay0 : 0.0}
                             </h5>
                         </div>
                     </div>

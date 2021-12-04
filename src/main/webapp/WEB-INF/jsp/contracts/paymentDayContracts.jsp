@@ -8,8 +8,10 @@
         <div class="card-header">
             <h4 class="card-title text-primary pull-right">
                 اقساط يوم
-                (${paymentDay}) -
+                (${paymentDay})
+                -
                 للعميل
+                (${clientName})
             </h4>
         </div>
         <div class="card-body shadow">

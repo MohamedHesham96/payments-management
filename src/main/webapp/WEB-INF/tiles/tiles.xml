@@ -32,4 +32,8 @@
         <put-attribute name="main-content" value="/WEB-INF/jsp/clients/clients.jsp"/>
     </definition>
 
+    <definition name="clientProfile" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/clients/clientProfile.jsp"/>
+    </definition>
+
 </tiles-definitions>

@@ -13,4 +13,6 @@ public interface ContractService {
     Contract getContract(Integer contractId);
 
     Page<Contract> getContracts(Pagination pagination);
+
+    void deleteContract(Integer contractId);
 }

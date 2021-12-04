@@ -23,6 +23,14 @@ public class ClientsController extends BaseController {
     @Autowired
     ClientService clientService;
 
+    @GetMapping("/{clientId}")
+    public ModelAndView getClient(@PathVariable Integer clientId) {
+        Client client = clientService.getClient(clientId);
+        ModelAndView clientProfileMV = new ModelAndView("clientProfile");
+        clientProfileMV.addObject("client", client);
+        return clientProfileMV;
+    }
+
     @GetMapping
     public ModelAndView getClients() {
         Pagination pagination = new Pagination(0, 10);
@@ -66,12 +74,11 @@ public class ClientsController extends BaseController {
         }
     }
 
-    @GetMapping("/{paymentDay}")
+    @GetMapping("/paymentDay/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer paymentDay) {
-        Pagination pagination = new Pagination(0, 10);
         ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayClients");
+        Pagination pagination = new Pagination(0, 10);
         Page<Client> clientsPage = clientService.getClientsByPaymentDay(paymentDay, pagination);
-
         paymentDayClientsMV.addObject("clients", clientsPage.getContent());
         paymentDayClientsMV.addObject("total", clientsPage.getTotalPages());
         paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
@@ -83,8 +90,11 @@ public class ClientsController extends BaseController {
     @GetMapping("/{clientId}/contracts/paymentDay/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer clientId,
                                                @PathVariable Integer paymentDay) {
-
         ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayContracts");
+        Client client = clientService.getClient(clientId);
+        if (client != null) {
+            paymentDayClientsMV.addObject("clientName", client.getName());
+        }
         List<Contract> contracts = clientService.getClientContracts(clientId, paymentDay);
         paymentDayClientsMV.addObject("contracts", contracts);
         return paymentDayClientsMV;

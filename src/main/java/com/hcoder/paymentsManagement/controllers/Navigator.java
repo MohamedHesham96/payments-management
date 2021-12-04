@@ -44,6 +44,7 @@ public class Navigator {
     @RequestMapping("/home")
     public ModelAndView goHomePage() {
         ModelAndView homeMV = new ModelAndView("homePage");
+        homeMV.addObject("remainAmountDay0", contractService.sumPaymentDayRemainAmountTotal(0));
         homeMV.addObject("remainAmountDay5", contractService.sumPaymentDayRemainAmountTotal(5));
         homeMV.addObject("remainAmountDay10", contractService.sumPaymentDayRemainAmountTotal(10));
         homeMV.addObject("remainAmountDay15", contractService.sumPaymentDayRemainAmountTotal(15));

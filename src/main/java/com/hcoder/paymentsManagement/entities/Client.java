@@ -22,7 +22,7 @@ public class Client {
     private LocalDateTime creationDate;
 
     @OneToMany(mappedBy = "client")
-    @OrderBy("creationDate desc")
+    @OrderBy("enabled desc, creationDate desc")
     private List<Contract> contracts;
 
     public Client() {

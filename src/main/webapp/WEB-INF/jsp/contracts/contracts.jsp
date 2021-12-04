@@ -11,7 +11,7 @@
                 (${contracts.size()})
             </h4>
 
-            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#contractModal">
+            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#contractModal">
                 إضافة عقد
             </button>
         </div>
@@ -27,6 +27,7 @@
                     <th>اسم الضامن</th>
                     <th>رقم الضامن</th>
                     <th>التاريخ</th>
+                    <th>العمليات</th>
                 </tr>
 
                 </thead>
@@ -51,6 +52,13 @@
                         </td>
                         <td>
                                 ${contract.creationDate}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger"
+                                ${contract.clientPays.size() gt  0 ? 'disabled': ''}
+                                    onclick="deleteEntity(${contract.id}, '/contracts')">
+                                حذف
+                            </button>
                         </td>
                     </tr>
                 </c:forEach>
