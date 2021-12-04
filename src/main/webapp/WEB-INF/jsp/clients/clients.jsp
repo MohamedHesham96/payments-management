@@ -42,12 +42,12 @@
                             <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                         </td>
                         <td>
-                            <button class="btn btn-sm btn-outline-danger text-danger"
+                            <button class="btn btn-sm btn-outline-danger"
+                                ${client.contracts.size() gt  0 ? 'disabled': ''}
                                     onclick="deleteEntity(${client.id}, '/clients')">
                                 حذف
                             </button>
                         </td>
-
                     </tr>
                 </c:forEach>
                 </tbody>
