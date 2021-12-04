@@ -30,7 +30,7 @@
                         <span class="pull-right mr-1">${contract.devicePriceAfterInterest}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
-                        <span class="pull-right">المبلغ المدفوع:</span>
+                        <span class="pull-right">المقدم:</span>
                         <span class="pull-right mr-1">${contract.payed}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
@@ -38,8 +38,8 @@
                         <span class="pull-right mr-1">${contract.remain}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
-                        <span class="pull-right">الباقي من الإجمالي:</span>
-                        <span class="pull-right mr-1 bg-danger text-white pl-1 pr-1">${contract.remainAmount}</span>
+                        <span class="pull-right">المتبقي من الإجمالي:</span>
+                        <span class="pull-right mr-1 pl-1 pr-1">${contract.remainAmount}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">الفائدة الشهرية:</span>

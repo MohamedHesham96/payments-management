@@ -7,11 +7,11 @@
     <div class="modal-dialog modal-lgl modal-dialog-centered" role="document">
         <div class="modal-content" dir="rtl">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">إضافة عقد</h5>
+                <h4 class="modal-title">إضافة عقد</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pt-1">
                 <form id="contractForm" data-parsley-validate>
-                    <div class="form-group">
+                    <div>
                         <label class="pull-right">العميل</label>
                         <select name="clientId" class="form-control text-right"
                                 data-parsley-required="true" data-parsley-trigger="input">
@@ -22,20 +22,20 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="mt-2">
                         <label class="pull-right">نوع الجهاز</label>
                         <input name="deviceType" placeholder="نوع الجهاز"
                                class="form-control text-right" data-parsley-maxlength="50"
                                data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
 
-                    <div class="form-group">
+                    <div class="mt-2 mb-2">
                         <label class="pull-right">الرقم التسلسلي</label>
                         <input name="serialNumber" placeholder="الرقم التسلسلي"
                                class="form-control text-right" data-parsley-maxlength="50"
                                data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
-                    <div class="card w-100 border-primary">
+                    <div class="card w-100 m-auto border-primary">
                         <div class="card-header bg-primary text-white text-right pr-2 p-1">
                                 <span class="card-title">
                                     حسابات نظام القسط
@@ -62,12 +62,12 @@
 
                             <div class="row mt-1">
                                 <div class="col-6">
-                                    <span class="pull-right text-size-15 mb-1">عدد شهور</span>
+                                    <span class="pull-right text-size-15 mb-1">عدد الشهور</span>
                                     <select id="monthsNumber" name="monthsNumber"
                                             oninput="updateDevicePriceAfterMonthlyInterest()"
                                             class="form-control form-control-sm text-right"
                                             data-parsley-required="true" data-parsley-trigger="change">
-                                        <option value="">-- اختار عدد شهور الدفع --</option>
+                                        <option value="">-- اختار عدد شهور --</option>
                                         <option value="0">غير محدد</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -90,30 +90,27 @@
                                 </div>
                             </div>
 
-                            <hr class="bg-primary">
+                            <hr class="bg-primary mb-2">
 
                             <div class="container mt-1">
                                 <div class="row">
-                                    <label class="pull-right">
+                                    <h5 class="pull-right">
                                         الجهاز قسط:
                                         <span id="devicePriceAfterMonthlyInterestSpan"> 0 + 0 * 0 = 0</span>
-                                    </label>
+                                    </h5>
                                 </div>
 
                                 <div class="row">
-                                    <label class="pull-right">
-                                        باقي المبلغ:
+                                    <h5 class="pull-right">
+                                        المبلغ المتبقي:
                                         <span id="remainAmountSpan"> 0 - 0 = 0</span>
-                                    </label>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="clearfix"></div>
-
-
-                    <div class="form-group">
+                    <div class="mt-2">
                         <label class="pull-right">يوم دفع القسط</label>
                         <select name="paymentDay" class="form-control text-right"
                                 data-parsley-required="true" data-parsley-trigger="change">
@@ -128,14 +125,14 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="mt-2">
                         <label class="pull-right">اسم الضامن</label>
                         <input name="guarantorName" placeholder="اسم الضامن"
                                class="form-control text-right" data-parsley-maxlength="50"
                                data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
 
-                    <div class="form-group">
+                    <div class="mt-2">
                         <label class="pull-right">تيليفون الضامن</label>
                         <input name="guarantorPhone" placeholder="تيليفون الضامن"
                                class="form-control text-right" data-parsley-maxlength="11"
