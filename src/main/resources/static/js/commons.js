@@ -180,9 +180,9 @@ function processObject(obj, key, value) {
 }
 
 function nextPage(url, responseDiv, formId) {
-    var currentPage = $("#current").val();
-    var totalNumberOfPages = $("#total").val();
-    var size = $("#size").val();
+    var currentPage = $("#currentPage").val();
+    var totalNumberOfPages = $("#totalPages").val();
+    var size = $("#pageSize").val();
     var nextPage = parseInt(currentPage) + 1;
     if (nextPage < parseInt(totalNumberOfPages)) {
         if (formId != null) {
@@ -196,8 +196,8 @@ function nextPage(url, responseDiv, formId) {
 
 function previousPage(url, responseDiv, formId) {
     event.preventDefault();
-    var currentPage = $("#current").val();
-    var size = $("#size").val();
+    var currentPage = $("#currentPage").val();
+    var size = $("#pageSize").val();
     var previousPage = parseInt(currentPage) - 1;
     if (previousPage >= 0) {
         if (formId != null) {
@@ -211,7 +211,7 @@ function previousPage(url, responseDiv, formId) {
 
 function changeTableSize(url, responseDiv, formId) {
     event.preventDefault();
-    var size = $("#size").val();
+    var size = $("#pageSize").val();
     if (formId != null) {
         var form = convertToJSONObject("#" + formId);
         loadTableForm(url, responseDiv, form, 0, size)
@@ -224,7 +224,7 @@ function loadTable(url, responseDiv, page, size) {
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: $("#applicationContext").val() + url + "/" + page + "/" + size,
+        url: url + "/" + page + "/" + size,
         success: function (data) {
             $("#" + responseDiv).html(data);
         }
@@ -234,7 +234,7 @@ function loadTable(url, responseDiv, page, size) {
 function loadTableForm(url, responseDiv, form, page, size) {
     $.ajax({
         type: 'POST',
-        url: $("#applicationContext").val() + url + "/" + page + "/" + size,
+        url: url + "/" + page + "/" + size,
         data: JSON.stringify(form),
         contentType: "application/json",
         success: function (data) {

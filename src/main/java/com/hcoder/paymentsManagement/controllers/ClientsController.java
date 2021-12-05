@@ -37,10 +37,25 @@ public class ClientsController extends BaseController {
         ModelAndView paymentDayClientsMV = new ModelAndView("clients");
         Page<Client> clientsPage = clientService.getClients(pagination);
         paymentDayClientsMV.addObject("clients", clientsPage.getContent());
-        paymentDayClientsMV.addObject("total", clientsPage.getTotalPages());
+        paymentDayClientsMV.addObject("totalPages", clientsPage.getTotalPages());
+        paymentDayClientsMV.addObject("pageSize", clientsPage.getPageable().getPageSize());
         paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
         return paymentDayClientsMV;
     }
+
+    @GetMapping("/search/{page}/{size}")
+    public ModelAndView getClients(@PathVariable Integer page,
+                                   @PathVariable Integer size) {
+        Pagination pagination = new Pagination(page, size);
+        ModelAndView paymentDayClientsMV = new ModelAndView("clients/_clientsResult");
+        Page<Client> clientsPage = clientService.getClients(pagination);
+        paymentDayClientsMV.addObject("clients", clientsPage.getContent());
+        paymentDayClientsMV.addObject("totalPages", clientsPage.getTotalPages());
+        paymentDayClientsMV.addObject("pageSize", clientsPage.getPageable().getPageSize());
+        paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
+        return paymentDayClientsMV;
+    }
+
 
     @PostMapping
     public @ResponseBody

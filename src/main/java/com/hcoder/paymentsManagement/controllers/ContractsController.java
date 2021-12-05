@@ -34,11 +34,27 @@ public class ContractsController extends BaseController {
 
     @GetMapping
     public ModelAndView getContracts() {
-        Pagination pagination = new Pagination(0, 10);
         ModelAndView contractsPageMV = new ModelAndView("contracts");
+        Pagination pagination = new Pagination(0, 10);
         Page<Contract> contractsPage = contractService.getContracts(pagination);
         contractsPageMV.addObject("contracts", contractsPage.getContent());
-        contractsPageMV.addObject("total", contractsPage.getTotalPages());
+        contractsPageMV.addObject("totalPages", contractsPage.getTotalPages());
+        contractsPageMV.addObject("pageSize", contractsPage.getPageable().getPageSize());
+        contractsPageMV.addObject("currentPage", contractsPage.getPageable().getPageNumber());
+        contractsPageMV.addObject("clients", clientService.getAllClients());
+        return contractsPageMV;
+    }
+
+    @GetMapping("/search/{page}/{size}")
+    public @ResponseBody
+    ModelAndView getContracts(@PathVariable Integer page,
+                              @PathVariable Integer size) {
+        ModelAndView contractsPageMV = new ModelAndView("clients/_clientsResult");
+        Pagination pagination = new Pagination(page, size);
+        Page<Contract> contractsPage = contractService.getContracts(pagination);
+        contractsPageMV.addObject("contracts", contractsPage.getContent());
+        contractsPageMV.addObject("totalPages", contractsPage.getTotalPages());
+        contractsPageMV.addObject("pageSize", contractsPage.getPageable().getPageSize());
         contractsPageMV.addObject("currentPage", contractsPage.getPageable().getPageNumber());
         contractsPageMV.addObject("clients", clientService.getAllClients());
         return contractsPageMV;
