@@ -49,14 +49,13 @@ public class ContractsController extends BaseController {
     public @ResponseBody
     ModelAndView getContracts(@PathVariable Integer page,
                               @PathVariable Integer size) {
-        ModelAndView contractsPageMV = new ModelAndView("clients/_clientsResult");
+        ModelAndView contractsPageMV = new ModelAndView("contracts/_contractsResult");
         Pagination pagination = new Pagination(page, size);
         Page<Contract> contractsPage = contractService.getContracts(pagination);
         contractsPageMV.addObject("contracts", contractsPage.getContent());
         contractsPageMV.addObject("totalPages", contractsPage.getTotalPages());
         contractsPageMV.addObject("pageSize", contractsPage.getPageable().getPageSize());
         contractsPageMV.addObject("currentPage", contractsPage.getPageable().getPageNumber());
-        contractsPageMV.addObject("clients", clientService.getAllClients());
         return contractsPageMV;
     }
 
@@ -72,6 +71,9 @@ public class ContractsController extends BaseController {
             Double devicePriceAfterInterest = contractDTO.getDevicePrice()
                     + contractDTO.getMonthsNumber()
                     * contractDTO.getMonthlyInterest();
+            if (devicePriceAfterInterest < contractDTO.getPayed()) {
+                return new ResponseModal(false, "المقدم اكبر من سعر الجهاز");
+            }
             contract.setDevicePriceAfterInterest(devicePriceAfterInterest);
             contract.setPayed(contractDTO.getPayed());
             contract.setRemain(devicePriceAfterInterest - contractDTO.getPayed());
@@ -81,7 +83,7 @@ public class ContractsController extends BaseController {
             contract.setPaymentDay(contractDTO.getPaymentDay());
             contract.setGuarantorName(contractDTO.getGuarantorName());
             contract.setGuarantorPhone(contractDTO.getGuarantorPhone());
-            contract.setEnabled(true);
+            contract.setEnabled(devicePriceAfterInterest == contractDTO.getPayed());
             contract.setCreationDate(LocalDateTime.now());
             contractService.saveContract(contract);
             return new ResponseModal(true, "تم حفظ العقد بنجاح");

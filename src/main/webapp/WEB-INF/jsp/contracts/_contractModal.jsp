@@ -52,10 +52,11 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <span class="pull-right text-size-15 mb-1">المبلغ المدفوع</span>
+                                    <span class="pull-right text-size-15 mb-1">المقدم</span>
                                     <input id="payed" name="payed" placeholder=""
                                            oninput="updateRemainAmount()"
-                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           class="form-control form-control-sm text-right"
+                                           data-parsley-type="number"
                                            data-parsley-required="true" data-parsley-trigger="input"/>
                                 </div>
                             </div>
@@ -125,21 +126,23 @@
                         </select>
                     </div>
 
-                 <div class="row mt-2">
-                     <div class="col-6">
-                         <label class="pull-right">اسم الضامن</label>
-                         <input name="guarantorName" placeholder="اسم الضامن"
-                                class="form-control text-right" data-parsley-maxlength="50"
-                                data-parsley-required="true" data-parsley-trigger="input"/>
-                     </div>
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <label class="pull-right">اسم الضامن</label>
+                            <input name="guarantorName" placeholder="اسم الضامن"
+                                   class="form-control text-right" data-parsley-maxlength="50"
+                                   data-parsley-required="true" data-parsley-trigger="input"/>
+                        </div>
 
-                     <div class="col-6">
-                         <label class="pull-right">تيليفون الضامن</label>
-                         <input name="guarantorPhone" placeholder="تيليفون الضامن"
-                                class="form-control text-right" data-parsley-maxlength="11"
-                                data-parsley-required="true" data-parsley-trigger="input"/>
-                     </div>
-                 </div>
+                        <div class="col-6">
+                            <label class="pull-right">تيليفون الضامن</label>
+                            <input name="guarantorPhone" placeholder="تيليفون الضامن"
+                                   class="form-control text-right"
+                                   data-parsley-type="digits"
+                                   data-parsley-minlength="11" data-parsley-maxlength="11"
+                                   data-parsley-required="true" data-parsley-trigger="input"/>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

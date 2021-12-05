@@ -22,7 +22,9 @@
                     <div class="form-group">
                         <label class="pull-right">تليفون العميل</label>
                         <input name="phone" placeholder="تليفون العميل"
-                               class="form-control text-right" data-parsley-maxlength="11"
+                               class="form-control text-right"
+                               data-parsley-type="digits"
+                               data-parsley-minlength="11" data-parsley-maxlength="11"
                                data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
                 </form>

@@ -12,7 +12,7 @@
             </h4>
         </div>
         <div class="card-body shadow">
-            <table class="table table-hover table-striped">
+            <table class="table table-sm table-hover table-striped">
 
                 <thead class="bg-primary shadow text-white"
                        style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">

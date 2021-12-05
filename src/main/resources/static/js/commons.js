@@ -270,21 +270,30 @@ function postForm(formId, url) {
 }
 
 function deleteEntity(elementId, url) {
-    $.ajax({
-        type: 'DELETE',
-        url: url + "/" + elementId,
-        success: function (response) {
-            if (response.status == true) {
-                showSuccessToaster(response.message);
-                refreshCurrentPage(2000);
-            } else {
-                showErrorToaster(response.message);
-            }
-        },
-        error: function () {
-            toastr.error('حدث خطأ ما');
-            refreshCurrentPage(4000);
 
+    bootbox.confirm({
+        message: "هل انت متأكد من الحذف ؟",
+        locale: 'ar',
+        callback: function (result) {
+            if (result) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: url + "/" + elementId,
+                    success: function (response) {
+                        if (response.status == true) {
+                            showSuccessToaster(response.message);
+                            refreshCurrentPage(2000);
+                        } else {
+                            showErrorToaster(response.message);
+                        }
+                    },
+                    error: function () {
+                        toastr.error('حدث خطأ ما');
+                        refreshCurrentPage(4000);
+
+                    }
+                });
+            }
         }
     });
 }

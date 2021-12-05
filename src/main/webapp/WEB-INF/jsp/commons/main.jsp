@@ -21,6 +21,9 @@
     <script src="<c:url value="/js/commons.js"/>"></script>
     <script src="<c:url value="/plugins/parsley/parsley.js"/>"></script>
     <script src="<c:url value="/plugins/parsley/ar.js"/>"></script>
+    <script src="<c:url value="/plugins/bootbox/bootbox.min.js"/>"></script>
+    <script src="<c:url value="/plugins/bootbox/bootbox.locales.min.js"/>"></script>
+
 </head>
 
 <!-- body -->

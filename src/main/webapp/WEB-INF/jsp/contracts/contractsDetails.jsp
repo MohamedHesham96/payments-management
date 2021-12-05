@@ -1,3 +1,6 @@
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.sql.Date" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -76,13 +79,14 @@
         <div class="col-8 p-0 shadow" style="height:100%">
 
             <div class="table-responsive" style="max-height: 550px">
-                <table class="table table-striped table-hover">
+                <table class="table table-sm table-striped table-hover">
                     <thead class="table-striped bg-primary text-white shadow"
                            style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                     <tr>
                         <th class="col-1">المبلغ</th>
                         <th class="col-2">التاريخ</th>
                         <th class="col-3">الملاحظة</th>
+                        <th class="col-1">العمليات</th>
                     </tr>
 
                     </thead>
@@ -99,6 +103,12 @@
                             </td>
                             <td>
                                     ${clientPay.note}
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-danger"
+                                        onclick="deleteEntity(${clientPay.id}, '/clientPays')">
+                                    حذف
+                                </button>
                             </td>
                         </tr>
                     </c:forEach>
