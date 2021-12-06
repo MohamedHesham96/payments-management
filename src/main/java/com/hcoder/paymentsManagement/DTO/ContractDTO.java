@@ -32,7 +32,8 @@ public class ContractDTO {
 
     @NotNull(message = "يجب ادخال عدد شهور الدفع")
     @Max(value = 9, message = "عدد الشهور لا تتعدى ال9 شهور")
-    private Double monthsNumber;
+    @Min(value = 0, message = "عدد الشهور لا يمكن ان تكون بالسالب")
+    private Integer monthsNumber;
 
     @NotNull(message = "يجب ادخال الفائدة الشهرية")
     private Double monthlyInterest;
@@ -118,11 +119,11 @@ public class ContractDTO {
         this.remainAmount = remainAmount;
     }
 
-    public Double getMonthsNumber() {
+    public Integer getMonthsNumber() {
         return monthsNumber;
     }
 
-    public void setMonthsNumber(Double monthsNumber) {
+    public void setMonthsNumber(Integer monthsNumber) {
         this.monthsNumber = monthsNumber;
     }
 

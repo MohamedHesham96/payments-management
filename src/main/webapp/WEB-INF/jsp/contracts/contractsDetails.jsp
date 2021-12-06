@@ -41,8 +41,12 @@
                         <span class="pull-right mr-1">${contract.remain}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
-                        <span class="pull-right">المتبقي من الإجمالي:</span>
+                        <span class="pull-right">المتبقي حتى الآن:</span>
                         <span class="pull-right mr-1 pl-1 pr-1">${contract.remainAmount}</span>
+                    </li>
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                        <span class="pull-right">عدد شهور الدفع:</span>
+                        <span class="pull-right mr-1">${contract.monthsNumber}</span>
                     </li>
                     <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
                         <span class="pull-right">الفائدة الشهرية:</span>

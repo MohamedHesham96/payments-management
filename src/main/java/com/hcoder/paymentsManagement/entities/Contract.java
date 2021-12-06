@@ -38,7 +38,7 @@ public class Contract {
     private Double remainAmount;
 
     @Column(name = "months_number")
-    private Double monthsNumber;
+    private Integer monthsNumber;
 
     @Column(name = "monthly_interest")
     private Double monthlyInterest;
@@ -134,11 +134,11 @@ public class Contract {
         this.remainAmount = remainAmount;
     }
 
-    public Double getMonthsNumber() {
+    public Integer getMonthsNumber() {
         return monthsNumber;
     }
 
-    public void setMonthsNumber(Double monthsNumber) {
+    public void setMonthsNumber(Integer monthsNumber) {
         this.monthsNumber = monthsNumber;
     }
 
