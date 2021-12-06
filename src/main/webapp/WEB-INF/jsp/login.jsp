@@ -55,4 +55,15 @@
         </form>
     </div>
 </div>
+
+
+<div dir="rtl" class="text-center w-100 bg-primary text-white pt-1"
+     style="position: fixed; bottom: 0">
+    <h4>
+        تصميم وتنفيذ شركة - BlueSoft
+        - المهندس محمد هشام
+        - 01013807084
+    </h4>
+</div>
+
 </body>
