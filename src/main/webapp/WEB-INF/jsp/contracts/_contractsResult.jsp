@@ -11,7 +11,7 @@
         <option ${pageSize eq 50 ? 'selected':''} value="50">50</option>
         <option ${pageSize eq 100 ? 'selected':''} value="100">100</option>
     </select>
-    <label>من العملاء</label>
+    <label>من العقود</label>
 </div>
 
 <div class="table-responsive">
