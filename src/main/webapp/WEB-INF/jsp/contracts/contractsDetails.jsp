@@ -72,7 +72,8 @@
                                 <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                         </span>
                     </li>
-                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2">
+                    <li class="list-group-item list-group-item-action font-weight-bold text-size-15 p-2
+                     ${contract.enabled ? "bg-danger-light" : "bg-success-light"}">
                         <span class="pull-right">الحالة:</span>
                         <span class="pull-right mr-1">${contract.enabled ? "مفتوح" : "منتهي"}</span>
                     </li>
