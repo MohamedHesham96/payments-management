@@ -18,11 +18,11 @@
 <body style="background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
 
 <div class="container ">
-    <div class="card bg-secondary"
+    <div class="card border-primary"
          style="width: 21rem; margin-left: 400px; margin-top: 100px">
         <form action="login" method="post">
             <ul class="list-group list-group-flush text-center">
-                <li class="bg-light list-group-item p-4">
+                <li class=" bg-primary   text-light list-group-item p-4">
                     <strong dir="rtl" style="font-size: 40px">
 
                         4M
