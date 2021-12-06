@@ -17,30 +17,29 @@
 </head>
 <body style="background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
 
-
 <div class="container ">
-
-
-    <div class="card bg-secondary text-white"
+    <div class="card bg-secondary"
          style="width: 21rem; margin-left: 400px; margin-top: 100px">
-
         <form action="login" method="post">
-
             <ul class="list-group list-group-flush text-center">
+                <li class="bg-light list-group-item p-4">
+                    <strong dir="rtl" style="font-size: 40px">
 
-                <li class="bg-dark list-group-item">
+                        4M
+                        للتقسيط
 
+                    </strong>
+                </li>
+
+                <li class="bg-light list-group-item">
                     <div class="text-center form-group">
-
                         <label class="font-weight-bold">اسم المستخدم</label> <input
                             type="text" class="text-center form-control font-weight-bold"
                             name="username">
 
                     </div>
-
                 </li>
-
-                <li class="bg-dark list-group-item">
+                <li class="bg-light list-group-item">
 
                     <div class="form-group text-center">
                         <label class="font-weight-bold ">كلمة المرور</label> <input
@@ -48,10 +47,9 @@
                             class="text-center form-control font-weight-bold">
                     </div>
                 </li>
-
-                <li class="bg-dark list-group-item"><input type="submit"
-                                                           class="btn badge-info font-weight-bold form-control"
-                                                           value="تسجيل الدخول"/></li>
+                <li class="bg-light list-group-item"><input type="submit"
+                                                            class="btn btn-primary font-weight-bold form-control"
+                                                            value="تسجيل الدخول"/></li>
             </ul>
 
         </form>

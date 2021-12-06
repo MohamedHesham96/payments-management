@@ -15,43 +15,44 @@
             </h4>
         </div>
         <div class="card-body shadow">
-            <table class="table table-sm table-striped table-hover">
+            <div class="table-responsive" style="max-height: 550px">
+                <table class="table table-sm table-striped table-hover">
 
-                <thead class="table-striped bg-primary text-white shadow"
-                       style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-                <tr>
-                    <th>نوع الجهاز</th>
-                    <th>الرقم التسلسلي</th>
-                    <th>اسم الضامن</th>
-                    <th>رقم الضامن</th>
-                    <th>التاريخ</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-                <c:forEach items="${contracts}" var="contract">
+                    <thead class="table-striped bg-primary text-white shadow"
+                           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                     <tr>
-                        <td>
-                            <a href="/contracts/${contract.id}">${contract.deviceType}</a>
-                        </td>
-                        <td>
-                                ${contract.serialNumber}
-                        </td>
-                        <td>
-                                ${contract.guarantorName}
-                        </td>
-                        <td>
-                                ${contract.guarantorPhone}
-                        </td>
-                        <td>
-                                ${contract.creationDate}
-                        </td>
+                        <th>نوع الجهاز</th>
+                        <th>الرقم التسلسلي</th>
+                        <th>اسم الضامن</th>
+                        <th>رقم الضامن</th>
+                        <th>التاريخ</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
 
+                    </thead>
+
+                    <tbody>
+                    <c:forEach items="${contracts}" var="contract">
+                        <tr>
+                            <td>
+                                <a href="/contracts/${contract.id}">${contract.deviceType}</a>
+                            </td>
+                            <td>
+                                    ${contract.serialNumber}
+                            </td>
+                            <td>
+                                    ${contract.guarantorName}
+                            </td>
+                            <td>
+                                    ${contract.guarantorPhone}
+                            </td>
+                            <td>
+                                    ${contract.creationDate}
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

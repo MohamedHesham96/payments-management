@@ -14,42 +14,43 @@
     <label>من العملاء</label>
 </div>
 
-<table class="table table-sm table-hover table-striped">
-
-    <thead class="bg-primary shadow text-white"
-           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-    <tr>
-        <th>الاسم</th>
-        <th>التيليفون</th>
-        <th>تاريخ التسجيل</th>
-        <th>العمليات</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${clients}" var="client">
+<div class="table-responsive">
+    <table class="table table-sm table-hover table-striped">
+        <thead class="bg-primary shadow text-white"
+               style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
         <tr>
-            <td>
-                <a href="/clients/${client.id}">${client.name}</a>
-            </td>
-            <td>
-                    ${client.phone}
-            </td>
-            <td>
-                <fmt:parseDate value="${client.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
-                               var="creationDate"/>
-                <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-outline-danger"
-                    ${client.contracts.size() gt  0 ? 'disabled': ''}
-                        onclick="deleteEntity(${client.id}, '/clients')">
-                    حذف
-                </button>
-            </td>
+            <th>الاسم</th>
+            <th>التيليفون</th>
+            <th>تاريخ التسجيل</th>
+            <th>العمليات</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${clients}" var="client">
+            <tr>
+                <td>
+                    <a href="/clients/${client.id}">${client.name}</a>
+                </td>
+                <td>
+                        ${client.phone}
+                </td>
+                <td>
+                    <fmt:parseDate value="${client.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
+                                   var="creationDate"/>
+                    <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger"
+                        ${client.contracts.size() gt  0 ? 'disabled': ''}
+                            onclick="deleteEntity(${client.id}, '/clients')">
+                        حذف
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 
 <input type="hidden" id="currentPage" name="currentPage"
        value="${currentPage ne null and currentPage ne 0 ? currentPage : 0}"/>

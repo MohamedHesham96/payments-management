@@ -82,7 +82,6 @@
         </div>
 
         <div class="col-8 p-0 shadow" style="height:100%">
-
             <div class="table-responsive" style="max-height: 550px">
                 <table class="table table-sm table-striped table-hover">
                     <thead class="table-striped bg-primary text-white shadow"

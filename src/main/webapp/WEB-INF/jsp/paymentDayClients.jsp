@@ -12,29 +12,30 @@
             </h4>
         </div>
         <div class="card-body shadow">
-            <table class="table table-sm table-hover table-striped">
+            <div class="table-responsive">
+                <table class="table table-sm table-hover table-striped">
 
-                <thead class="bg-primary shadow text-white"
-                       style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-                <tr>
-                    <th>الاسم</th>
-                    <th>التيليفون</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${clients}" var="client">
+                    <thead class="bg-primary shadow text-white"
+                           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                     <tr>
-                        <td>
-                            <a href="/clients/${client.id}/contracts/paymentDay/${paymentDay}">${client.name}</a>
-                        </td>
-                        <td>
-                                ${client.phone}
-                        </td>
+                        <th>الاسم</th>
+                        <th>التيليفون</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${clients}" var="client">
+                        <tr>
+                            <td>
+                                <a href="/clients/${client.id}/contracts/paymentDay/${paymentDay}">${client.name}</a>
+                            </td>
+                            <td>
+                                    ${client.phone}
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

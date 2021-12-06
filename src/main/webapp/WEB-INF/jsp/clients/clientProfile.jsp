@@ -5,7 +5,6 @@
 
 <div class="container col-10 m-auto" dir="rtl">
     <div class="row ">
-
         <div class="card col-3 ml-4 p-0 shadow">
             <div class="card-header w-100 bg-primary text-white">
                 <h5 class="card-title text-center m-auto">
@@ -42,39 +41,41 @@
                 </h4>
             </div>
             <div class="card-body">
-                <table class="table table-sm table-striped table-hover">
-                    <thead class="table-striped bg-primary text-white shadow"
-                           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-                    <tr>
-                        <th>نوع الجهاز</th>
-                        <th>اسم الضامن</th>
-                        <th>رقم الضامن</th>
-                        <th>الحالة</th>
-                        <th>التاريخ</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${client.contracts}" var="contract">
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped table-hover">
+                        <thead class="table-striped bg-primary text-white shadow"
+                               style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
                         <tr>
-                            <td>
-                                <a href="/contracts/${contract.id}">${contract.deviceType}</a>
-                            </td>
-                            <td>
-                                    ${contract.guarantorName}
-                            </td>
-                            <td>
-                                    ${contract.guarantorPhone}
-                            </td>
-                            <td class="${contract.enabled ? "text-danger" : "text-success"}">
-                                    ${contract.enabled ? "مفتوح" : "منتهي"}
-                            </td>
-                            <td>
-                                    ${contract.creationDate}
-                            </td>
+                            <th>نوع الجهاز</th>
+                            <th>اسم الضامن</th>
+                            <th>رقم الضامن</th>
+                            <th>الحالة</th>
+                            <th>التاريخ</th>
                         </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${client.contracts}" var="contract">
+                            <tr>
+                                <td>
+                                    <a href="/contracts/${contract.id}">${contract.deviceType}</a>
+                                </td>
+                                <td>
+                                        ${contract.guarantorName}
+                                </td>
+                                <td>
+                                        ${contract.guarantorPhone}
+                                </td>
+                                <td class="${contract.enabled ? "text-danger" : "text-success"}">
+                                        ${contract.enabled ? "مفتوح" : "منتهي"}
+                                </td>
+                                <td>
+                                        ${contract.creationDate}
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -14,54 +14,56 @@
     <label>من العملاء</label>
 </div>
 
-<table class="table table-sm table-striped table-hover">
+<div class="table-responsive">
+    <table class="table table-sm table-striped table-hover">
 
-    <thead class="table-striped bg-primary text-white shadow"
-           style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
-    <tr>
-        <th>اسم العميل</th>
-        <th>نوع الجهاز</th>
-        <th>الرقم التسلسلي</th>
-        <th>اسم الضامن</th>
-        <th>رقم الضامن</th>
-        <th>التاريخ</th>
-        <th>العمليات</th>
-    </tr>
-
-    </thead>
-
-    <tbody>
-    <c:forEach items="${contracts}" var="contract">
+        <thead class="table-striped bg-primary text-white shadow"
+               style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">
         <tr>
-            <td>
-                <a href="/clients/${contract.client.id}">${contract.client.name}</a>
-            </td>
-            <td>
-                <a href="/contracts/${contract.id}">${contract.deviceType}</a>
-            </td>
-            <td>
-                    ${contract.serialNumber}
-            </td>
-            <td>
-                    ${contract.guarantorName}
-            </td>
-            <td>
-                    ${contract.guarantorPhone}
-            </td>
-            <td>
-                    ${contract.creationDate}
-            </td>
-            <td>
-                <button class="btn btn-sm btn-outline-danger"
-                    ${contract.clientPays.size() gt  0 ? 'disabled': ''}
-                        onclick="deleteEntity(${contract.id}, '/contracts')">
-                    حذف
-                </button>
-            </td>
+            <th>اسم العميل</th>
+            <th>نوع الجهاز</th>
+            <th>الرقم التسلسلي</th>
+            <th>اسم الضامن</th>
+            <th>رقم الضامن</th>
+            <th>التاريخ</th>
+            <th>العمليات</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+
+        </thead>
+
+        <tbody>
+        <c:forEach items="${contracts}" var="contract">
+            <tr>
+                <td>
+                    <a href="/clients/${contract.client.id}">${contract.client.name}</a>
+                </td>
+                <td>
+                    <a href="/contracts/${contract.id}">${contract.deviceType}</a>
+                </td>
+                <td>
+                        ${contract.serialNumber}
+                </td>
+                <td>
+                        ${contract.guarantorName}
+                </td>
+                <td>
+                        ${contract.guarantorPhone}
+                </td>
+                <td>
+                        ${contract.creationDate}
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger"
+                        ${contract.clientPays.size() gt  0 ? 'disabled': ''}
+                            onclick="deleteEntity(${contract.id}, '/contracts')">
+                        حذف
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 
 <input type="hidden" id="currentPage" name="currentPage"
        value="${currentPage ne null and currentPage ne 0 ? currentPage : 0}"/>
