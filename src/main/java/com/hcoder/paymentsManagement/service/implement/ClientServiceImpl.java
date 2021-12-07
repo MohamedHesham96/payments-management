@@ -22,7 +22,6 @@ public class ClientServiceImpl implements ClientService {
     ClientRepository clientRepository;
 
     public Page<Client> getClientsByPaymentDay(Integer paymentDay, Pagination pagination) {
-
         Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
         return clientRepository.getClientByPaymentDay(paymentDay, pageable);
     }

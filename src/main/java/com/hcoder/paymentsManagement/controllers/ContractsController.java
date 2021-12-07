@@ -83,7 +83,7 @@ public class ContractsController extends BaseController {
             contract.setPaymentDay(contractDTO.getPaymentDay());
             contract.setGuarantorName(contractDTO.getGuarantorName());
             contract.setGuarantorPhone(contractDTO.getGuarantorPhone());
-            contract.setEnabled(devicePriceAfterInterest == contractDTO.getPayed());
+            contract.setEnabled(devicePriceAfterInterest != contractDTO.getPayed());
             contract.setCreationDate(LocalDateTime.now());
             contractService.saveContract(contract);
             return new ResponseModal(true, "تم حفظ العقد بنجاح");

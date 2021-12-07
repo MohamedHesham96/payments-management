@@ -133,7 +133,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12 m-auto">
                     <div class="card">
                         <div class="card-header shadow-sm">
-                            <a href="/clients//paymentDay/0">
+                            <a href="/clients/paymentDay/0">
                                 <h5 class="card-title text-size-50 text-center">
                                     غير محدد
                                 </h5>
