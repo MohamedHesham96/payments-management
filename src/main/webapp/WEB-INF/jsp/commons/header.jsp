@@ -92,7 +92,7 @@
 
             <li style="margin: 5px;"><a
                     class="btn bg-danger text-white font-weight-bold "
-                    style="padding: 10px; width: 100px" href="logout">خروج</a></li>
+                    style="padding: 10px; width: 100px" href="/logout">خروج</a></li>
 
         </ul>
 
