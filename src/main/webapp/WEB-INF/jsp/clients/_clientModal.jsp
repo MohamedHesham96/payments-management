@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" dir="rtl">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">إضافة عميل</h5>
+                <h5 class="modal-title font-weight-bold">إضافة عميل</h5>
             </div>
             <div class="modal-body">
                 <form id="clientForm" data-parsley-validate>

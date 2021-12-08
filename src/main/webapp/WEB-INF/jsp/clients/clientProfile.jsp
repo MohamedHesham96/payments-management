@@ -3,27 +3,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="container col-10 m-auto" dir="rtl">
+<div class="w-100 mr-5" dir="rtl">
     <div class="row ">
-        <div class="card col-3 ml-4 p-0 shadow">
+        <div class="card col-3 ml-4 p-0 shadow border-primary">
             <div class="card-header w-100 bg-primary text-white">
-                <h5 class="card-title text-center m-auto">
+                <h5 class="card-title text-center m-auto font-weight-bold">
                     تفاصيل العميل
                 </h5>
             </div>
             <div class="card-body p-0">
                 <ul class="list-group list-group-flush p-0">
                     <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">اسم العميل:</span>
-                        <span class="pull-right mr-1">${client.name}</span>
+                        <span class="pull-right text-size-20 font-weight-bold">اسم العميل:</span>
+                        <span class="pull-right mr-1 text-size-20 font-weight-bold">${client.name}</span>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">رقم العميل:</span>
-                        <span class="pull-right mr-1">${client.phone}</span>
+                        <span class="pull-right text-size-20 font-weight-bold">رقم العميل:</span>
+                        <span class="pull-right mr-1 text-size-20 font-weight-bold">${client.phone}</span>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <span class="pull-right">التاريخ:</span>
-                        <span class="pull-right mr-1">
+                        <span class="pull-right text-size-20 font-weight-bold">تاريخ التسجيل:</span>
+                        <span class="pull-right mr-1 text-size-20 font-weight-bold">
                                  <fmt:parseDate value="${client.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
                                                 var="creationDate"/>
                                 <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
@@ -33,9 +33,9 @@
             </div>
         </div>
 
-        <div class="card col-8 p-0 shadow">
-            <div class="card-header">
-                <h4 class="card-title text-primary pull-right">
+        <div class="card col-8 p-0 shadow border-primary">
+            <div class="card-header bg-primary">
+                <h4 class="card-title text-white pull-right">
                     عقود العميل
                     (${client.contracts.size()})
                 </h4>

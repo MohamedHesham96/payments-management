@@ -45,4 +45,14 @@ public class ContractServiceImpl implements ContractService {
     public void deleteContract(Integer contractId) {
         contractRepository.deleteById(contractId);
     }
+
+    @Override
+    public Double sumTotalRemainAmount() {
+        return contractRepository.sumTotalRemainAmount();
+    }
+
+    @Override
+    public Double sumTotalPayedAmount() {
+        return contractRepository.sumTotalPayedAmount();
+    }
 }

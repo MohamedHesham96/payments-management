@@ -27,7 +27,8 @@
 </head>
 
 <!-- body -->
-<body>
+<body  background="/images/background.jpg" style="  background-attachment: fixed;
+background-repeat: no-repeat; background-position: center; background-size: cover">
 
 <tiles:insertAttribute name="header"/>
 

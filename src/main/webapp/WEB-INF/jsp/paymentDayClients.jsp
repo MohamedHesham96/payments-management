@@ -3,12 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="container" dir="rtl">
-    <div class="card shadow">
-        <div class="card-header">
-            <h4 class="card-title text-primary pull-right">
+    <div class="card shadow border-primary">
+        <div class="card-header bg-primary">
+            <h4 class="card-title text-white pull-right font-weight-bold">
                 اقساط يوم
-                (${paymentDay})
-
+                (${paymentDay == 0 ? 'غير محدد' : paymentDay})
             </h4>
         </div>
         <div class="card-body shadow">

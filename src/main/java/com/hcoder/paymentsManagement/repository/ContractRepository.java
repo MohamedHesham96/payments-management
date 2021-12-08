@@ -16,6 +16,12 @@ public interface ContractRepository extends JpaRepository<Contract, Integer> {
     @Query("select c from Contract c" +
             " order by case when (c.enabled = true) then 1 else 2 end")
     Page<Contract> findAll(Pageable pageable);
+
+    @Query("select sum(c.remainAmount) from Contract c")
+    Double sumTotalRemainAmount();
+
+    @Query("select sum(c.payed) from Contract c")
+    Double sumTotalPayedAmount();
 }
 
 

@@ -15,4 +15,8 @@ public interface ContractService {
     Page<Contract> getContracts(Pagination pagination);
 
     void deleteContract(Integer contractId);
+
+    Double sumTotalRemainAmount();
+
+    Double sumTotalPayedAmount();
 }

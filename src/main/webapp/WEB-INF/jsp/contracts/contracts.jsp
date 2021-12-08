@@ -4,13 +4,12 @@
 
 <div class="container" dir="rtl">
 
-    <div class="card shadow">
-        <div class="card-header">
-            <h4 class="card-title text-primary pull-right">
+    <div class="card shadow border-primary">
+        <div class="card-header bg-primary">
+            <h4 class="card-title text-white pull-right font-weight-bold">
                 العقود
             </h4>
-
-            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#contractModal"
+            <button class="btn btn-light font-weight-bold" data-toggle="modal" data-target="#contractModal"
                     onclick="clearForm('contractForm')">
                 إضافة عقد
             </button>

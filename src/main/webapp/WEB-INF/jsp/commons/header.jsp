@@ -16,7 +16,11 @@
      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top scrolling-navbar">
     <a class="navbar-brand font-weight-bold" style="font-size: 30px"
        href="#">4M
-        للتقسيط</a>
+        للتقسيط
+        <small class="text-size-15">
+            (فرع حسان فون)
+        </small>
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -93,9 +97,7 @@
             <li style="margin: 5px;"><a
                     class="btn bg-danger text-white font-weight-bold "
                     style="padding: 10px; width: 100px" href="/logout">خروج</a></li>
-
         </ul>
-
     </div>
 </nav>
 <br>

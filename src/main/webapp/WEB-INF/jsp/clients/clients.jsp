@@ -4,13 +4,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container" dir="rtl">
-    <div class="card shadow">
-        <div class="card-header">
-            <h4 class="card-title text-primary pull-right">
-                العملاء
+    <div class="card shadow border-primary">
+        <div class="card-header bg-primary">
+            <h4 class="card-title text-white pull-right font-weight-bold"> العملاء
                 (${(clients.size())})
             </h4>
-            <button class="btn btn-outline-primary font-weight-bold" data-toggle="modal" data-target="#clientModal"
+            <button class="btn btn-light font-weight-bold" data-toggle="modal" data-target="#clientModal"
                     onclick="clearForm('clientForm')">
                 إضافة عميل
             </button>

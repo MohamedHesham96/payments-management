@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-lgl modal-dialog-centered" role="document">
         <div class="modal-content" dir="rtl">
             <div class="modal-header bg-primary text-white p-2">
-                <h4 class="modal-title">إضافة عقد</h4>
+                <h4 class="modal-title font-weight-bold">إضافة عقد</h4>
             </div>
             <div class="modal-body pt-1">
                 <form id="contractForm" data-parsley-validate>

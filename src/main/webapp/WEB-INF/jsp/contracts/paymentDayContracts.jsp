@@ -6,7 +6,7 @@
 
     <div class="card shadow">
         <div class="card-header">
-            <h4 class="card-title text-primary pull-right">
+            <h4 class="card-title text-primary pull-right font-weight-bold">
                 اقساط يوم
                 (${paymentDay})
                 -
