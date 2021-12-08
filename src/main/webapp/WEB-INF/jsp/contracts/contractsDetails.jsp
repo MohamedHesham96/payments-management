@@ -18,7 +18,8 @@
                 <ul class="list-group list-group-flush p-0">
                     <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">اسم العميل:</span>
-                        <span class="pull-right mr-1"><a href="/clients/${contract.client.id}">${contract.client.name}</a></span>
+                        <span class="pull-right mr-1"><a
+                                href="/clients/${contract.client.id}">${contract.client.name}</a></span>
                     </li>
                     <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">نوع الجهاز:</span>

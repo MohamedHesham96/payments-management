@@ -69,7 +69,9 @@
                                         ${contract.enabled ? "مفتوح" : "منتهي"}
                                 </td>
                                 <td>
-                                        ${contract.creationDate}
+                                    <fmt:parseDate value="${contract.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
+                                                   var="creationDate"/>
+                                    <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                                 </td>
                             </tr>
                         </c:forEach>

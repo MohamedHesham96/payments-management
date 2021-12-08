@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container" dir="rtl">
 
@@ -46,7 +47,9 @@
                                     ${contract.guarantorPhone}
                             </td>
                             <td>
-                                    ${contract.creationDate}
+                                <fmt:parseDate value="${contract.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
+                                               var="creationDate"/>
+                                <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                             </td>
                         </tr>
                     </c:forEach>
