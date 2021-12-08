@@ -94,11 +94,8 @@ public class ClientsController extends BaseController {
     @GetMapping("/paymentDay/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer paymentDay) {
         ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayClients");
-        Pagination pagination = new Pagination(0, 10);
-        Page<Client> clientsPage = clientService.getClientsByPaymentDay(paymentDay, pagination);
-        paymentDayClientsMV.addObject("clients", clientsPage.getContent());
-        paymentDayClientsMV.addObject("total", clientsPage.getTotalPages());
-        paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
+        List<Client> clients = clientService.getClientsByPaymentDay(paymentDay);
+        paymentDayClientsMV.addObject("clients", clients);
         paymentDayClientsMV.addObject("paymentDay", paymentDay);
 
         return paymentDayClientsMV;

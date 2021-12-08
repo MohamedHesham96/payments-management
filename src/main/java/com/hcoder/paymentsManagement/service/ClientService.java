@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ClientService {
 
-    Page<Client> getClientsByPaymentDay(Integer paymentDay, Pagination pagination);
+    List<Client> getClientsByPaymentDay(Integer paymentDay);
 
     List<Contract> getClientContracts(Integer clientId, Integer paymentDay);
 

@@ -22,9 +22,8 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     ClientRepository clientRepository;
 
-    public Page<Client> getClientsByPaymentDay(Integer paymentDay, Pagination pagination) {
-        Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
-        return clientRepository.getClientByPaymentDay(paymentDay, pageable);
+    public List<Client> getClientsByPaymentDay(Integer paymentDay) {
+        return clientRepository.getClientByPaymentDay(paymentDay);
     }
 
     @Override
