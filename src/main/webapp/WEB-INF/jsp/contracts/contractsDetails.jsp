@@ -16,60 +16,60 @@
             </div>
             <div class="card-body p-0">
                 <ul class="list-group list-group-flush p-0">
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">اسم العميل:</span>
                         <span class="pull-right mr-1"><a
                                 href="/clients/${contract.client.id}">${contract.client.name}</a></span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">نوع الجهاز:</span>
                         <span class="pull-right mr-1">${contract.deviceType}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">الرقم التسلسلي:</span>
                         <span class="pull-right mr-1">${contract.serialNumber}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">سعر الجهاز الأصلي:</span>
                         <span class="pull-right mr-1">${contract.devicePrice}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">سعر الجهاز قسط:</span>
                         <span class="pull-right mr-1">${contract.devicePriceAfterInterest}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">المقدم:</span>
                         <span class="pull-right mr-1">${contract.payed}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">المتبقي وقت الدفع:</span>
                         <span class="pull-right mr-1">${contract.remain}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">المتبقي حتى الآن:</span>
                         <span class="pull-right mr-1">${contract.remainAmount}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">عدد شهور الدفع:</span>
                         <span class="pull-right mr-1">${contract.monthsNumber}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">الفائدة الشهرية:</span>
                         <span class="pull-right mr-1">${contract.monthlyInterest}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">يوم الدفع:</span>
                         <span class="pull-right mr-1">${contract.paymentDay == 0 ? 'غير محدد' : contract.paymentDay}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">اسم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorName}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">رقم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorPhone}</span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">التاريخ:</span>
                         <span class="pull-right mr-1">
                                  <fmt:parseDate value="${contract.creationDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"
@@ -77,7 +77,7 @@
                                 <fmt:formatDate value="${creationDate}" pattern="yyyy/MM/dd hh:mm a"/>
                         </span>
                     </li>
-                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0
+                    <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0
                      ${contract.enabled ? "bg-danger-light" : "bg-success-light"}">
                         <span class="pull-right">الحالة:</span>
                         <span class="pull-right mr-1">${contract.enabled ? "مفتوح" : "منتهي"}</span>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-8 p-0 shadow" style="height:100%">
-            <div class="table-responsive" style="max-height: 550px">
+            <div class="table-responsive" style="max-height: 675px">
                 <table class="table table-sm table-primary table-striped table-hover">
                     <thead class="table-striped bg-primary text-white shadow"
                            style="position: -webkit-sticky; position: sticky; top: 0; z-index: 2;">

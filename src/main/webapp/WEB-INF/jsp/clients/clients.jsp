@@ -14,6 +14,9 @@
                 إضافة عميل
             </button>
         </div>
+
+        <jsp:include page="_clientsSearch.jsp"/>
+
         <div id="clientsResultDiv" class="card-body shadow">
             <jsp:include page="_clientsResult.jsp"/>
         </div>

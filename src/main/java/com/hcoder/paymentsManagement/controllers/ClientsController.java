@@ -1,6 +1,7 @@
 package com.hcoder.paymentsManagement.controllers;
 
 import com.hcoder.paymentsManagement.DTO.ClientDTO;
+import com.hcoder.paymentsManagement.DTO.ClientSearchDTO;
 import com.hcoder.paymentsManagement.DTO.Pagination;
 import com.hcoder.paymentsManagement.DTO.ResponseModal;
 import com.hcoder.paymentsManagement.entities.Client;
@@ -43,12 +44,13 @@ public class ClientsController extends BaseController {
         return paymentDayClientsMV;
     }
 
-    @GetMapping("/search/{page}/{size}")
-    public ModelAndView getClients(@PathVariable Integer page,
+    @PostMapping("/search/{page}/{size}")
+    public ModelAndView getClients(@RequestBody ClientSearchDTO clientSearchDTO,
+                                   @PathVariable Integer page,
                                    @PathVariable Integer size) {
         Pagination pagination = new Pagination(page, size);
         ModelAndView paymentDayClientsMV = new ModelAndView("clients/_clientsResult");
-        Page<Client> clientsPage = clientService.getClients(pagination);
+        Page<Client> clientsPage = clientService.searchInClients(clientSearchDTO, pagination);
         paymentDayClientsMV.addObject("clients", clientsPage.getContent());
         paymentDayClientsMV.addObject("totalPages", clientsPage.getTotalPages());
         paymentDayClientsMV.addObject("pageSize", clientsPage.getPageable().getPageSize());

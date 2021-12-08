@@ -1,5 +1,6 @@
 package com.hcoder.paymentsManagement.service;
 
+import com.hcoder.paymentsManagement.DTO.ClientSearchDTO;
 import com.hcoder.paymentsManagement.DTO.Pagination;
 import com.hcoder.paymentsManagement.entities.Client;
 import com.hcoder.paymentsManagement.entities.Contract;
@@ -22,4 +23,6 @@ public interface ClientService {
     Client getClient(Integer clientId);
 
     List<Client> getAllClients();
+
+    Page<Client> searchInClients(ClientSearchDTO clientSearchDTO, Pagination pagination);
 }

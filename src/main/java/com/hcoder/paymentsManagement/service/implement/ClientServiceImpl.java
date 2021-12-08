@@ -1,5 +1,6 @@
 package com.hcoder.paymentsManagement.service.implement;
 
+import com.hcoder.paymentsManagement.DTO.ClientSearchDTO;
 import com.hcoder.paymentsManagement.DTO.Pagination;
 import com.hcoder.paymentsManagement.entities.Client;
 import com.hcoder.paymentsManagement.entities.Contract;
@@ -56,5 +57,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Client> getAllClients() {
         return clientRepository.findAll();
+    }
+
+    @Override
+    public Page<Client> searchInClients(ClientSearchDTO clientSearchDTO, Pagination pagination) {
+        Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
+        return clientRepository.findClients(clientSearchDTO.getClientName(), pageable);
     }
 }

@@ -18,6 +18,10 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 
     @Query("select c from Contract c where c.client.id = :clientId and c.paymentDay = :paymentDay and c.enabled = true")
     List<Contract> getClientContracts(Integer clientId, Integer paymentDay);
+
+    @Query("select c from Client c where " +
+            "(c.name is null or c.name like concat('%', :clientName, '%'))")
+    Page<Client> findClients(String clientName, Pageable pageable);
 }
 
 

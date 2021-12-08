@@ -5,7 +5,7 @@
 
 <div class="pull-right">
     <label>عرض</label>
-    <select id="pageSize" name="pageSize" onchange="changeTableSize('/clients/search', 'clientsResultDiv', null);">
+    <select id="pageSize" name="pageSize" onchange="changeTableSize('/clients/search', 'clientsResultDiv', 'clientSearchForm');">
         <option ${pageSize eq 10 ? 'selected':''} value="10">10</option>
         <option ${pageSize eq 20 ? 'selected':''} value="20">20</option>
         <option ${pageSize eq 50 ? 'selected':''} value="50">50</option>
@@ -69,13 +69,13 @@
 <div style="justify-content: center" class="row">
 
     <button class="btn btn-sm m-1 ${currentPage + 1 == totalPages || totalPages == 0 || totalPages == null ? 'btn-light disabled' : 'btn-primary'}" ${page + 1 == totalPages || totalPages == 0 ? 'disabled' : ''}
-            onclick="nextPage('/clients/search', 'clientsResultDiv', null)">
+            onclick="nextPage('/clients/search', 'clientsResultDiv', 'clientSearchForm')">
         التالي
     </button>
 
     <button class="btn btn-sm m-1
         ${currentPage == 0 || totalPages == 0 || currentPage == null || totalPages == null ? 'btn-light disabled' : 'btn-primary'}"
-            onclick="previousPage('/clients/search', 'clientsResultDiv', null)">
+            onclick="previousPage('/clients/search', 'clientsResultDiv', 'clientSearchForm')">
         السابق
     </button>
 
