@@ -2,6 +2,7 @@ package com.hcoder.paymentsManagement.controllers;
 
 import com.hcoder.paymentsManagement.DTO.ResponseModal;
 import com.hcoder.paymentsManagement.entities.ClientPay;
+import com.hcoder.paymentsManagement.entities.Contract;
 import com.hcoder.paymentsManagement.service.ClientPayService;
 import com.hcoder.paymentsManagement.service.ClientService;
 import com.hcoder.paymentsManagement.service.ContractService;
@@ -38,6 +39,12 @@ public class ClientPaysController extends BaseController {
                 return new ResponseModal(false, "هذا التحصيل مر عليه اكثر من يوم");
             }
             clientPayService.deleteClientPay(clientPayId);
+            Contract contract = clientPay.getContract();
+            contract.setRemainAmount(contract.getRemainAmount() + clientPay.getAmount());
+            if (contract != null && !contract.getEnabled()) {
+                contract.setEnabled(true);
+            }
+            contractService.saveContract(contract);
             return new ResponseModal(true, "تم حذف العقد بنجاح");
         } catch (Exception e) {
             return new ResponseModal(false, "حدث خطأ ,لم يتم حذف العقد");

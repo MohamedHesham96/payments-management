@@ -15,8 +15,8 @@
                     <div class="form-group">
                         <label class="pull-right">المبلغ</label>
                         <input name="amount" placeholder="المبلغ المدفوع"
-                               class="form-control text-right" data-parsley-type="number"
-                               data-parsley-required="true" data-parsley-trigger="change"/>
+                               class="form-control text-right" data-parsley-type="number" min="1"
+                               data-parsley-required="true" data-parsley-trigger="input"/>
                     </div>
 
                     <div class="form-group">

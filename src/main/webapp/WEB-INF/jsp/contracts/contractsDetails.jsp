@@ -17,6 +17,10 @@
             <div class="card-body p-0">
                 <ul class="list-group list-group-flush p-0">
                     <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                        <span class="pull-right">اسم العميل:</span>
+                        <span class="pull-right mr-1"><a href="/clients/${contract.client.id}">${contract.client.name}</a></span>
+                    </li>
+                    <li class="list-group-item list-group-item-action  text-size-20 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">نوع الجهاز:</span>
                         <span class="pull-right mr-1">${contract.deviceType}</span>
                     </li>
@@ -121,7 +125,7 @@
             </div>
             <c:if test="${contract.enabled}">
                 <button class="btn btn-primary pull-right w-100"
-                        data-toggle="modal" data-target="#clientPayModal">
+                        data-toggle="modal" data-target="#clientPayModal" onclick="clearForm('clientPayForm')">
                     تحصيل مبلغ
                 </button>
             </c:if>
@@ -131,19 +135,6 @@
                     هذا العقد منتهي
                 </div>
             </c:if>
-
-            <%--            <c:if test="${contract.enabled}">--%>
-            <%--                <button class="btn btn-outline-primary pull-right w-100"--%>
-            <%--                        data-toggle="modal" data-target="#clientPayModal">--%>
-            <%--                    تحصيل مبلغ--%>
-            <%--                </button>--%>
-            <%--            </c:if>--%>
-
-            <%--            <c:if test="${!contract.enabled}">--%>
-            <%--                <button class="btn btn-outline-success pull-right w-100">--%>
-            <%--                    تفعيل العقد--%>
-            <%--                </button>--%>
-            <%--            </c:if>--%>
         </div>
     </div>
 </div>

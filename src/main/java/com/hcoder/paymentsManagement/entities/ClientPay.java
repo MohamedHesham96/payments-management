@@ -1,5 +1,7 @@
 package com.hcoder.paymentsManagement.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -20,8 +22,9 @@ public class ClientPay {
     @Column(name = "DATE")
     private LocalDateTime date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "contract_id")
+    @JsonIgnore
     private Contract contract;
 
     public Integer getId() {

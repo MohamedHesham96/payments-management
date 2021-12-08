@@ -47,7 +47,8 @@
                                     <span class="pull-right text-size-15 mb-1">سعر الجهاز</span>
                                     <input id="devicePrice" name="devicePrice"
                                            oninput="updateDevicePriceAfterMonthlyInterest()"
-                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           class="form-control form-control-sm text-right"
+                                           data-parsley-type="number" min="1"
                                            data-parsley-required="true" data-parsley-trigger="input"/>
                                 </div>
 
@@ -56,7 +57,7 @@
                                     <input id="payed" name="payed" placeholder=""
                                            oninput="updateRemainAmount()"
                                            class="form-control form-control-sm text-right"
-                                           data-parsley-type="number"
+                                           data-parsley-type="number" min="1"
                                            data-parsley-required="true" data-parsley-trigger="input"/>
                                 </div>
                             </div>
@@ -86,7 +87,8 @@
                                     <span class="pull-right text-size-15 mb-1">الفائدة الشهرية</span>
                                     <input id="monthlyInterest" name="monthlyInterest"
                                            oninput="updateDevicePriceAfterMonthlyInterest()"
-                                           class="form-control form-control-sm text-right" data-parsley-type="number"
+                                           class="form-control form-control-sm text-right"
+                                           data-parsley-type="number" min="1"
                                            data-parsley-required="true" data-parsley-trigger="input"/>
                                 </div>
                             </div>
