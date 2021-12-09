@@ -30,8 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -80,6 +78,12 @@
             <groupId>com.googlecode.jmapper-framework</groupId>
             <artifactId>jmapper-core</artifactId>
             <version>1.6.1.CR2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.smattme</groupId>
+            <artifactId>mysql-backup4j</artifactId>
+            <version>1.2.1</version>
         </dependency>
 
     </dependencies>

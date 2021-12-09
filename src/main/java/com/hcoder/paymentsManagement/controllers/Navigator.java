@@ -1,6 +1,7 @@
 package com.hcoder.paymentsManagement.controllers;
 
 import com.hcoder.paymentsManagement.service.ContractService;
+import com.hcoder.paymentsManagement.utils.DatabaseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.SQLException;
 
 @Controller
 public class Navigator {
@@ -25,8 +28,19 @@ public class Navigator {
 
     @RequestMapping("/logout")
     public ModelAndView userLogout() {
+        ModelAndView loginMV = new ModelAndView("login");
+        try {
+            DatabaseUtil.backup("hbstudent", "hbstudent", "payments-management", "../data-backups");
+        } catch (SQLException e) {
+            return loginMV;
+        } catch (IOException e) {
+            return loginMV;
+        } catch (ClassNotFoundException e) {
+            return loginMV;
+        }
         httpSession.removeAttribute("username");
-        return new ModelAndView("login");
+        loginMV.addObject("backUpSavedMessage", "تم حفظ نسخة احتياطية من كل بيانات");
+        return loginMV;
     }
 
     @RequestMapping("/login")
