@@ -39,7 +39,7 @@ public class Navigator {
             return loginMV;
         }
         httpSession.removeAttribute("username");
-        loginMV.addObject("backUpSavedMessage", "تم حفظ نسخة احتياطية من كل بيانات");
+        loginMV.addObject("backUpSavedMessage", "تم حفظ نسخة احتياطية من كل البيانات");
         return loginMV;
     }
 
@@ -58,7 +58,7 @@ public class Navigator {
     @RequestMapping("/home")
     public ModelAndView goHomePage() {
         ModelAndView homeMV = new ModelAndView("homePage");
-        homeMV.addObject("totalPayedAmount", contractService.sumTotalPayedAmount());
+        homeMV.addObject("totalPayedAmount", contractService.sumTotalClientPayedAmount() + contractService.sumTotalPayedAmount());
         homeMV.addObject("totalRemainAmount", contractService.sumTotalRemainAmount());
         homeMV.addObject("remainAmountDay5", contractService.sumPaymentDayRemainAmountTotal(5));
         homeMV.addObject("remainAmountDay10", contractService.sumPaymentDayRemainAmountTotal(10));

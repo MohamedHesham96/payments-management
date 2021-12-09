@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="w-100 mr-5" dir="rtl">
-    <div class="row ">
+    <div class="row">
         <div class="card col-3 ml-4 p-0 shadow border-primary">
             <div class="card-header w-100 bg-primary text-white">
                 <h5 class="card-title text-center m-auto font-weight-bold">

@@ -20,6 +20,9 @@ public interface ContractRepository extends JpaRepository<Contract, Integer> {
     @Query("select sum(c.remainAmount) from Contract c")
     Double sumTotalRemainAmount();
 
+    @Query("select sum(cp.amount) from ClientPay cp")
+    Double sumTotalClientPayedAmount();
+
     @Query("select sum(c.payed) from Contract c")
     Double sumTotalPayedAmount();
 }

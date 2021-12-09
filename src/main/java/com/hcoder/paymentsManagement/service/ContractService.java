@@ -18,5 +18,7 @@ public interface ContractService {
 
     Double sumTotalRemainAmount();
 
+    Double sumTotalClientPayedAmount();
+
     Double sumTotalPayedAmount();
 }

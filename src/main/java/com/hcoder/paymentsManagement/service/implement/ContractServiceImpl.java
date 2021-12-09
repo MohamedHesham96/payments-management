@@ -52,6 +52,11 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
+    public Double sumTotalClientPayedAmount() {
+        return contractRepository.sumTotalClientPayedAmount();
+    }
+
+    @Override
     public Double sumTotalPayedAmount() {
         return contractRepository.sumTotalPayedAmount();
     }
