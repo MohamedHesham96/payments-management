@@ -1,9 +1,6 @@
 package com.hcoder.paymentsManagement.controllers;
 
-import com.hcoder.paymentsManagement.DTO.ClientPayDTO;
-import com.hcoder.paymentsManagement.DTO.ContractDTO;
-import com.hcoder.paymentsManagement.DTO.Pagination;
-import com.hcoder.paymentsManagement.DTO.ResponseModal;
+import com.hcoder.paymentsManagement.DTO.*;
 import com.hcoder.paymentsManagement.entities.Client;
 import com.hcoder.paymentsManagement.entities.ClientPay;
 import com.hcoder.paymentsManagement.entities.Contract;
@@ -17,7 +14,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/contracts")
@@ -85,6 +85,7 @@ public class ContractsController extends BaseController {
             contract.setGuarantorPhone(contractDTO.getGuarantorPhone());
             contract.setEnabled(devicePriceAfterInterest != contractDTO.getPayed());
             contract.setCreationDate(LocalDateTime.now());
+            contract.setLatestPayedMonth(LocalDate.now());
             contractService.saveContract(contract);
             return new ResponseModal(true, "تم حفظ العقد بنجاح");
         } catch (Exception e) {
@@ -96,7 +97,19 @@ public class ContractsController extends BaseController {
     public ModelAndView getContract(@PathVariable Integer contractId) {
         ModelAndView contractsDetailsMV = new ModelAndView("contractDetails");
         Contract contract = contractService.getContract(contractId);
+        List<LocalDate> paymentDates = new ArrayList<>();
+        LocalDate contractCreationDate = contract.getCreationDate().toLocalDate();
+        Integer contractPaymentDay = contract.getPaymentDay();
+        paymentDates.add(contractCreationDate);
+        if (contractCreationDate.getDayOfMonth() <= contractPaymentDay && contractPaymentDay != 0) {
+            paymentDates.add(contractCreationDate.withDayOfMonth(contractPaymentDay));
+        }
+        for (int i = 1; i < contract.getMonthsNumber(); i++) {
+            paymentDates.add(contractCreationDate.plusMonths(i).withDayOfMonth(contractPaymentDay));
+        }
+
         contractsDetailsMV.addObject("contract", contract);
+        contractsDetailsMV.addObject("paymentDates", paymentDates);
         return contractsDetailsMV;
     }
 
@@ -141,6 +154,26 @@ public class ContractsController extends BaseController {
             return new ResponseModal(true, "تم حذف العقد بنجاح");
         } catch (Exception e) {
             return new ResponseModal(false, "حدث خطأ ,لم يتم حذف العقد");
+        }
+    }
+
+    @PostMapping("/{contractId}/latestPayedMonth")
+    public @ResponseBody
+    ResponseModal saveContract(@PathVariable Integer contractId, @Valid @RequestBody ContractLatestPayedMonthDTO latestPayedMonthDTO) {
+        try {
+            Contract contract = contractService.getContract(contractId);
+            if (contract == null) {
+                return new ResponseModal(false, "هذالعقد غير موجود");
+            } else if (latestPayedMonthDTO.getLatestPayedMonth() == null) {
+                return new ResponseModal(false, "يجب ادخال تاريخ اخر قسط تم دفعه");
+            }
+            String latestPayedMonthString = latestPayedMonthDTO.getLatestPayedMonth();
+            LocalDate latestPayedMonthDate = LocalDate.parse(latestPayedMonthString);
+            contract.setLatestPayedMonth(latestPayedMonthDate);
+            contractService.saveContract(contract);
+            return new ResponseModal(true, "تم حفظ العقد بنجاح");
+        } catch (Exception e) {
+            return new ResponseModal(false, "حدث حطأ,لم تم حفظ العقد");
         }
     }
 }

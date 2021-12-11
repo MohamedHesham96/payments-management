@@ -1,6 +1,7 @@
 package com.hcoder.paymentsManagement.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,50 +14,53 @@ public class Contract {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "CLIENT_ID")
     private Client client;
 
-    @Column(name = "device_type")
+    @Column(name = "DEVICE_TYPE")
     private String deviceType;
 
-    @Column(name = "serial_number")
+    @Column(name = "SERIAL_NUMBER")
     private String serialNumber;
 
-    @Column(name = "device_price")
+    @Column(name = "DEVICE_PRICE")
     private Double devicePrice;
 
-    @Column(name = "device_price_after_interest")
+    @Column(name = "DEVICE_PRICE_AFTER_INTEREST")
     private Double devicePriceAfterInterest;
 
-    @Column(name = "payed")
+    @Column(name = "PAYED")
     private Double payed;
 
-    @Column(name = "remain")
+    @Column(name = "REMAIN")
     private Double remain;
 
-    @Column(name = "remain_amount")
+    @Column(name = "REMAIN_AMOUNT")
     private Double remainAmount;
 
-    @Column(name = "months_number")
+    @Column(name = "MONTHS_NUMBER")
     private Integer monthsNumber;
 
-    @Column(name = "monthly_interest")
+    @Column(name = "MONTHLY_INTEREST")
     private Double monthlyInterest;
 
-    @Column(name = "payment_day")
+    @Column(name = "PAYMENT_DAY")
     private Integer paymentDay;
 
-    @Column(name = "guarantor_name")
+    @Column(name = "GUARANTOR_NAME")
     private String guarantorName;
 
-    @Column(name = "guarantor_phone")
+    @Column(name = "GUARANTOR_PHONE")
     private String guarantorPhone;
 
-    @Column(name = "creation_date")
+    @Column(name = "CREATION_DATE")
     private LocalDateTime creationDate;
 
-    @Column(name = "enabled")
+    @Column(name = "ENABLED")
     private Boolean enabled;
+
+    @Column(name = "LATEST_PAYED_MONTH")
+    private LocalDate latestPayedMonth;
 
     @OneToMany(mappedBy = "contract")
     @OrderBy("date desc")
@@ -188,6 +192,14 @@ public class Contract {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public LocalDate getLatestPayedMonth() {
+        return latestPayedMonth;
+    }
+
+    public void setLatestPayedMonth(LocalDate latestPayedMonth) {
+        this.latestPayedMonth = latestPayedMonth;
     }
 
     public List<ClientPay> getClientPays() {

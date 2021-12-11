@@ -86,7 +86,7 @@
             </div>
         </div>
 
-        <div class="col-8 p-0 shadow" style="height:100%">
+        <div class="col-8 p-0 shadow bg-white" style="height:100%">
             <div class="table-responsive" style="max-height: 675px">
                 <table class="table table-sm table-primary table-striped table-hover">
                     <thead class="table-striped bg-primary text-white shadow"
@@ -125,10 +125,38 @@
                 </table>
             </div>
             <c:if test="${contract.enabled}">
-                <button class="btn btn-primary pull-right w-100"
-                        data-toggle="modal" data-target="#clientPayModal" onclick="clearForm('clientPayForm')">
-                    تحصيل مبلغ
-                </button>
+                <div class="row m-auto">
+                    <button class="btn btn-adn btn-primary w-25 m-auto"
+                            data-toggle="modal" data-target="#clientPayModal" onclick="clearForm('clientPayForm')">
+                        تحصيل مبلغ
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+                <c:if test="${contract.paymentDay ne 0}">
+
+
+                    <form id="latestPayedMonthForm" class="col-6 form-inline m-auto p-2">
+                        <button class="btn btn-primary col-2">
+                            تعديل
+                        </button>
+
+                        <select id="latestPayedMonth" name="latestPayedMonth"
+                                class="form-control text-right ml-2 mr-2"
+                                data-parsley-required="true" data-parsley-trigger="change">
+                            <option value="">-- اختار تاريخ قسط تم دفعه --</option>
+                            <c:forEach items="${paymentDates}" var="paymentDate">
+                                <option>${paymentDate}</option>
+                            </c:forEach>
+                        </select>
+
+                        <button class="btn btn-outline-primary col-2"
+                                onclick="postForm('latestPayedMonthForm', '/contracts/${contract.id}/latestPayedMonth')">
+                            حفظ
+                        </button>
+
+                    </form>
+
+                </c:if>
             </c:if>
 
             <c:if test="${!contract.enabled}">

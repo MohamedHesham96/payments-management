@@ -244,6 +244,7 @@ function loadTableForm(url, responseDiv, form, page, size) {
 }
 
 function postForm(formId, url) {
+    event.preventDefault();
     var form = $("#" + formId);
     form.parsley().validate();
     if (form.parsley().isValid()) {

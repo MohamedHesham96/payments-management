@@ -26,7 +26,7 @@ background-repeat: no-repeat; background-position: center; background-size: cove
 <div class="container ">
     <div class="card border-primary bg-primary"
          style="width: 21rem; margin-left: 400px; margin-top: 150px">
-        <form action="login" method="post">
+        <form action="/login" method="post">
             <ul class="list-group list-group-flush text-center">
                 <li class=" bg-primary  text-light list-group-item p-4">
                     <strong dir="rtl" style="font-size: 40px">
