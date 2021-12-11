@@ -15,10 +15,13 @@
             </button>
         </div>
 
-        <jsp:include page="_clientsSearch.jsp"/>
+        <div class="card-body shadow">
 
-        <div id="clientsResultDiv" class="card-body shadow">
-            <jsp:include page="_clientsResult.jsp"/>
+            <jsp:include page="_clientsSearch.jsp"/>
+
+            <div id="clientsResultDiv" class="mt-3">
+                <jsp:include page="_clientsResult.jsp"/>
+            </div>
         </div>
     </div>
 </div>

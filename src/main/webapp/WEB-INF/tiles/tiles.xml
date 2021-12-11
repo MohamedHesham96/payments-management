@@ -13,15 +13,15 @@
     </definition>
 
     <definition name="paymentDayClients" extends="paymentsManagementTemplate">
-        <put-attribute name="main-content" value="/WEB-INF/jsp/paymentDayClients.jsp"/>
+        <put-attribute name="main-content" value="/WEB-INF/jsp/paymentDayClients/paymentDayClients.jsp"/>
     </definition>
 
     <definition name="contracts" extends="paymentsManagementTemplate">
         <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/contracts.jsp"/>
     </definition>
 
-    <definition name="paymentDayContracts" extends="paymentsManagementTemplate">
-        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/paymentDayContracts.jsp"/>
+    <definition name="clientPayDayContracts" extends="paymentsManagementTemplate">
+        <put-attribute name="main-content" value="/WEB-INF/jsp/contracts/clientPayDayContracts.jsp"/>
     </definition>
 
     <definition name="contractDetails" extends="paymentsManagementTemplate">

@@ -4,7 +4,7 @@
 
 <div class="mt-3">
     <form id="clientSearchForm" class="col-7 form-inline"
-          onsubmit="changeTableSize('/clients/search', 'clientsResultDiv', 'clientSearchForm')">
+          onsubmit="changeTableSize('/clients/paymentDay/${paymentDay}', 'paymentDayClientsResultDiv', 'clientSearchForm')">
         <label for="clientName" class="pull-right">البحث باسم العميل: </label>
         <input id="clientName" name="clientName" placeholder="ادخل اسم العميل"
                class="form-control col-6 pull-right text-right mr-1">

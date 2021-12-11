@@ -13,8 +13,10 @@ import java.util.List;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
-    @Query("select distinct c.client from Contract c where c.paymentDay = :paymentDay and c.enabled = true")
-    List<Client> getClientByPaymentDay(Integer paymentDay);
+    @Query("select distinct c.client from Contract c where c.paymentDay = :paymentDay" +
+            " and c.enabled = true" +
+            " and (:clientName is null or c.client.name like concat('%', :clientName, '%'))")
+    Page<Client> getClientByPaymentDay(Integer paymentDay, String clientName, Pageable pageable);
 
     @Query("select c from Contract c where c.client.id = :clientId and c.paymentDay = :paymentDay and c.enabled = true")
     List<Contract> getClientContracts(Integer clientId, Integer paymentDay);
@@ -22,6 +24,7 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
     @Query("select c from Client c where " +
             "(c.name is null or c.name like concat('%', :clientName, '%'))")
     Page<Client> findClients(String clientName, Pageable pageable);
+
 }
 
 

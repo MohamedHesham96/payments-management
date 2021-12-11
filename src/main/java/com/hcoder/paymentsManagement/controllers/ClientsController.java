@@ -94,17 +94,37 @@ public class ClientsController extends BaseController {
     @GetMapping("/paymentDay/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer paymentDay) {
         ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayClients");
-        List<Client> clients = clientService.getClientsByPaymentDay(paymentDay);
-        paymentDayClientsMV.addObject("clients", clients);
+        Pagination pagination = new Pagination(0, 10);
+        Page<Client> clientsPage = clientService.searchInPaymentDayClients(paymentDay, new ClientSearchDTO(), pagination);
         paymentDayClientsMV.addObject("paymentDay", paymentDay);
+        paymentDayClientsMV.addObject("clients", clientsPage.getContent());
+        paymentDayClientsMV.addObject("totalPages", clientsPage.getTotalPages());
+        paymentDayClientsMV.addObject("pageSize", clientsPage.getPageable().getPageSize());
+        paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
+        return paymentDayClientsMV;
+    }
 
+    @PostMapping("/paymentDay/{paymentDay}/{page}/{size}")
+    public @ResponseBody
+    ModelAndView searchInPaymentDayClients(@PathVariable Integer paymentDay,
+                                           @PathVariable Integer page,
+                                           @PathVariable Integer size,
+                                           @RequestBody ClientSearchDTO clientSearchDTO) {
+        ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayClients/_paymentDayClientsResult");
+        Pagination pagination = new Pagination(page, size);
+        Page<Client> clientsPage = clientService.searchInPaymentDayClients(paymentDay, clientSearchDTO, pagination);
+        paymentDayClientsMV.addObject("paymentDay", paymentDay);
+        paymentDayClientsMV.addObject("clients", clientsPage.getContent());
+        paymentDayClientsMV.addObject("totalPages", clientsPage.getTotalPages());
+        paymentDayClientsMV.addObject("pageSize", clientsPage.getPageable().getPageSize());
+        paymentDayClientsMV.addObject("currentPage", clientsPage.getPageable().getPageNumber());
         return paymentDayClientsMV;
     }
 
     @GetMapping("/{clientId}/contracts/paymentDay/{paymentDay}")
     public ModelAndView getClientsByPaymentDay(@PathVariable Integer clientId,
                                                @PathVariable Integer paymentDay) {
-        ModelAndView paymentDayClientsMV = new ModelAndView("paymentDayContracts");
+        ModelAndView paymentDayClientsMV = new ModelAndView("clientPayDayContracts");
         Client client = clientService.getClient(clientId);
         if (client != null) {
             paymentDayClientsMV.addObject("clientName", client.getName());

@@ -22,10 +22,6 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     ClientRepository clientRepository;
 
-    public List<Client> getClientsByPaymentDay(Integer paymentDay) {
-        return clientRepository.getClientByPaymentDay(paymentDay);
-    }
-
     @Override
     public List<Contract> getClientContracts(Integer clientId, Integer paymentDay) {
         return clientRepository.getClientContracts(clientId, paymentDay);
@@ -62,5 +58,11 @@ public class ClientServiceImpl implements ClientService {
     public Page<Client> searchInClients(ClientSearchDTO clientSearchDTO, Pagination pagination) {
         Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
         return clientRepository.findClients(clientSearchDTO.getClientName(), pageable);
+    }
+
+    @Override
+    public Page<Client> searchInPaymentDayClients(Integer paymentDay, ClientSearchDTO clientSearchDTO, Pagination pagination) {
+        Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
+        return clientRepository.getClientByPaymentDay(paymentDay, clientSearchDTO.getClientName(), pageable);
     }
 }
