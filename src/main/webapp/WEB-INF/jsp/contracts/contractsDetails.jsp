@@ -61,6 +61,12 @@
                         <span class="pull-right">يوم الدفع:</span>
                         <span class="pull-right mr-1">${contract.paymentDay == 0 ? 'غير محدد' : contract.paymentDay}</span>
                     </li>
+                    <c:if test="${contract.paymentDay != 0}">
+                        <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
+                            <span class="pull-right"> تاريخ اخر قسط مدفوع:</span>
+                            <span class="pull-right mr-1">${contract.latestPayedMonth}</span>
+                        </li>
+                    </c:if>
                     <li class="list-group-item list-group-item-action text-size-19 font-weight-bold pt-2 pb-2 pr-1 pl-0">
                         <span class="pull-right">اسم الضامن:</span>
                         <span class="pull-right mr-1">${contract.guarantorName}</span>
@@ -126,37 +132,20 @@
             </div>
             <c:if test="${contract.enabled}">
                 <div class="row m-auto">
-                    <button class="btn btn-adn btn-primary w-25 m-auto"
+                    <button class="btn btn-primary w-25 m-auto"
                             data-toggle="modal" data-target="#clientPayModal" onclick="clearForm('clientPayForm')">
                         تحصيل مبلغ
                     </button>
                 </div>
-                <div class="clearfix"></div>
                 <c:if test="${contract.paymentDay ne 0}">
-
-
-                    <form id="latestPayedMonthForm" class="col-6 form-inline m-auto p-2">
-                        <button class="btn btn-primary col-2">
-                            تعديل
+                    <div class="row m-auto pt-2 pb-2">
+                        <button class="btn btn-sm btn-outline-primary w-25 m-auto"
+                                data-toggle="modal" data-target="#latestPayedMonthModal">
+                            تحديث تاريخ اخر قسط مدفوع
                         </button>
-
-                        <select id="latestPayedMonth" name="latestPayedMonth"
-                                class="form-control text-right ml-2 mr-2"
-                                data-parsley-required="true" data-parsley-trigger="change">
-                            <option value="">-- اختار تاريخ قسط تم دفعه --</option>
-                            <c:forEach items="${paymentDates}" var="paymentDate">
-                                <option>${paymentDate}</option>
-                            </c:forEach>
-                        </select>
-
-                        <button class="btn btn-outline-primary col-2"
-                                onclick="postForm('latestPayedMonthForm', '/contracts/${contract.id}/latestPayedMonth')">
-                            حفظ
-                        </button>
-
-                    </form>
-
+                    </div>
                 </c:if>
+                <div class="clearfix"></div>
             </c:if>
 
             <c:if test="${!contract.enabled}">
@@ -169,3 +158,4 @@
 </div>
 
 <jsp:include page="_clientPayModal.jsp"/>
+<jsp:include page="_latestPayedMonthModal.jsp"/>

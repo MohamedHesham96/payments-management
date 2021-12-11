@@ -11,8 +11,9 @@
 <!doctype html>
 <html class="no-js">
 <head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<c:url value="/css/style-ar.css"/>">
-    <link rel="stylesheet" href="<c:url value="/css/font-awesome.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/font-awesome.css"/>">
     <link href="<c:url value="/bootstrap/bootstrap.min.css"/>" rel="stylesheet">
     <script src="<c:url value="/plugins/Jquery/jquery-3.6.0.js"/>"></script>
     <script src="<c:url value="/bootstrap/bootstrap.min.js"/>"></script>

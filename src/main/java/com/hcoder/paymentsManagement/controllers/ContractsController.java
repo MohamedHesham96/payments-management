@@ -104,8 +104,10 @@ public class ContractsController extends BaseController {
         if (contractCreationDate.getDayOfMonth() <= contractPaymentDay && contractPaymentDay != 0) {
             paymentDates.add(contractCreationDate.withDayOfMonth(contractPaymentDay));
         }
-        for (int i = 1; i < contract.getMonthsNumber(); i++) {
-            paymentDates.add(contractCreationDate.plusMonths(i).withDayOfMonth(contractPaymentDay));
+        if (contractPaymentDay != 0) {
+            for (int i = 1; i < contract.getMonthsNumber(); i++) {
+                paymentDates.add(contractCreationDate.plusMonths(i).withDayOfMonth(contractPaymentDay));
+            }
         }
 
         contractsDetailsMV.addObject("contract", contract);
@@ -159,7 +161,7 @@ public class ContractsController extends BaseController {
 
     @PostMapping("/{contractId}/latestPayedMonth")
     public @ResponseBody
-    ResponseModal saveContract(@PathVariable Integer contractId, @Valid @RequestBody ContractLatestPayedMonthDTO latestPayedMonthDTO) {
+    ResponseModal updateContractLatestPayedMonth(@PathVariable Integer contractId, @Valid @RequestBody ContractLatestPayedMonthDTO latestPayedMonthDTO) {
         try {
             Contract contract = contractService.getContract(contractId);
             if (contract == null) {
@@ -171,6 +173,7 @@ public class ContractsController extends BaseController {
             LocalDate latestPayedMonthDate = LocalDate.parse(latestPayedMonthString);
             contract.setLatestPayedMonth(latestPayedMonthDate);
             contractService.saveContract(contract);
+            updateContractLatestPayedMonth();
             return new ResponseModal(true, "تم حفظ العقد بنجاح");
         } catch (Exception e) {
             return new ResponseModal(false, "حدث حطأ,لم تم حفظ العقد");

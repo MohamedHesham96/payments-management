@@ -60,4 +60,15 @@ public class ContractServiceImpl implements ContractService {
     public Double sumTotalPayedAmount() {
         return contractRepository.sumTotalPayedAmount();
     }
+
+    @Override
+    public Page<Contract> getLateMonthsContracts(Integer paymentDay, Pagination pagination) {
+        Pageable pageable = PageRequest.of(pagination.getPage(), pagination.getSize());
+        return contractRepository.getNotPayedContracts(paymentDay, pageable);
+    }
+
+    @Override
+    public Integer countLateMonthsContracts(Integer paymentDay) {
+        return contractRepository.countLateMonthsContracts(paymentDay);
+    }
 }

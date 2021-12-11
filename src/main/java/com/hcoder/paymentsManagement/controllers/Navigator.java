@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @Controller
-public class Navigator {
+public class Navigator extends BaseController {
 
     @Autowired
     private HttpSession httpSession;
@@ -39,6 +39,7 @@ public class Navigator {
             return loginMV;
         }
         httpSession.removeAttribute("username");
+        httpSession.removeAttribute("totalLateContracts");
         loginMV.addObject("backUpSavedMessage", "تم حفظ نسخة احتياطية من كل البيانات");
         return loginMV;
     }
@@ -66,6 +67,10 @@ public class Navigator {
         homeMV.addObject("remainAmountDay20", contractService.sumPaymentDayRemainAmountTotal(20));
         homeMV.addObject("remainAmountDay25", contractService.sumPaymentDayRemainAmountTotal(25));
         homeMV.addObject("remainAmountDay30", contractService.sumPaymentDayRemainAmountTotal(30));
+
+        if (httpSession.getAttribute("totalLateContracts") == null) {
+            updateContractLatestPayedMonth();
+        }
         return homeMV;
     }
 

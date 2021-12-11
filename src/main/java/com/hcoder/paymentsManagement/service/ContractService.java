@@ -21,4 +21,8 @@ public interface ContractService {
     Double sumTotalClientPayedAmount();
 
     Double sumTotalPayedAmount();
+
+    Page<Contract> getLateMonthsContracts(Integer paymentDay, Pagination pagination);
+
+    Integer countLateMonthsContracts(Integer paymentDay);
 }

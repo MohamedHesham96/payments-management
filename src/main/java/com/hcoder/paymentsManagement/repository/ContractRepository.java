@@ -25,6 +25,12 @@ public interface ContractRepository extends JpaRepository<Contract, Integer> {
 
     @Query("select sum(c.payed) from Contract c")
     Double sumTotalPayedAmount();
+
+    @Query(value = "select * from contract c where c.payment_day = :paymentDay and DATEDIFF(CURDATE(), c.latest_payed_month) > 30", nativeQuery = true)
+    Page<Contract> getNotPayedContracts(Integer paymentDay, Pageable pageable);
+
+    @Query(value = "select count(*) from contract c where c.payment_day = :paymentDay and DATEDIFF(CURDATE(), c.latest_payed_month) > 30", nativeQuery = true)
+    Integer countLateMonthsContracts(Integer paymentDay);
 }
 
 
